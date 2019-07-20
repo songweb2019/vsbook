@@ -1,0 +1,21 @@
+/* 通用 */
+*{margin:0px;padding:0px;}
+body{ font:14px 宋体; color: #333; background-color: #ffffff;}
+
+ul,ol{ list-style: none; }
+li{list-style-type:none;}
+/* a 标签*/
+a{ color: #333;text-decoration:none;}
+a:hover{ color:#f35b9a;border-bottom:1px solid #f35b9a; }
+
+input{ border:1px solid #f35b9a; outline:#f35b9a; }
+ /*小字体*/
+.f12px{font:12px 宋体;}
+
+/*字体加粗*/
+.fb{font-weight:bold;}
+
+/*首行缩进*/
+.ti2em{text-indent: 2em;}
+
+

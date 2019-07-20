@@ -1,0 +1,46 @@
+#footer{
+  width:1200px;
+  position: relative;
+  margin: 0 auto; 
+}
+/* 脚 列表 */
+#footer .footcont .footlist{
+  text-align: center;
+  background: #f3f3f3; 
+}
+#footer div .footlist li{
+  display: inline-block;
+  width: 100px;
+  height:100px;
+  margin:20px 50px;
+}
+#footer .footcont .footlist li p{
+  margin-top:75px;
+}
+#footer .footcont .footlist li:first-child{
+  background:url(../img/avatar/about1.png) no-repeat 50% 20%;
+}
+#footer .footcont .footlist li:nth-child(2){
+  background:url(../img/avatar/about2.png) no-repeat 50% 20%;
+}
+#footer .footcont .footlist li:nth-child(3){
+  background:url(../img/avatar/about3.png) no-repeat 50% 20%;
+}
+#footer .footcont .footlist li:last-child{
+  background:url(../img/avatar/about4.png) no-repeat 50% 20%;
+}
+#footer .footcont .footlist li:hover{
+  opacity: 0.8;
+}
+
+/* 脚 版权 */
+#footer .footcont .footcopyright{
+  border-top: 1px solid black;
+}
+#footer .footcont .footcopyright p{
+  line-height:40px;
+  text-align: center;
+}
+#footer .footcont .footcopyright p span{
+  padding: 0px 20px;
+}

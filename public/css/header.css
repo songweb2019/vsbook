@@ -1,0 +1,35 @@
+#header{
+  width: 1200px;
+  height:100px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  background: #f3f3f3;
+}
+#header div{
+  float: left;
+}
+/* logo */
+#headlogo{ width: 200px; }
+#headlogo p{  
+  font-size: 30px;
+  line-height:80px;
+}
+#headlogo p a:hover{
+  color: #f35b9a;
+  border:0;
+  transition:1s linear;
+}
+/* 搜索 */
+#headsearch{ width:800px; }
+#headsearch input{
+  width:300px;
+  height:30px;
+  margin-top:30px;
+  border-radius: 20px;
+}
+/* 登录条 注册 */
+#headloginbar{
+  width: 200px;
+  margin-top:40px;
+}

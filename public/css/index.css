@@ -1,0 +1,57 @@
+/* index.css */
+/* 侧边栏 */
+#sidebar{
+  width:60px;
+  height:200px;
+  position: fixed;
+  border-radius: 20px;
+  background: #fdf1bc;
+  opacity:1;
+  /* border: 1px solid black; */
+  top:200px;
+  right:40px;
+}
+#sidebar .sidebarcom{
+  margin:10px 0px; 
+  font-size: 16px;
+  text-align: center;
+}
+#sidebar .sidebarcom a p{
+  font-size: 16px;
+}
+.sidebarlogo{
+  width:60px;
+  height: 40px;
+  border: 1px solid black;
+}
+.sidebarlogo a{
+  text-decoration: none;
+}
+.sidebarfont{
+  width:60px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid black;
+}
+.sidebartop{
+  width:40px;
+  height:40px;
+  padding: 0px 10px;
+  line-height:20px;
+  border: 1px solid black;
+}
+/* 主要内容容器 */
+#container{
+  width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+/* 主体内容 */
+#main{
+  width: 1200px;
+  height: 2000px;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
