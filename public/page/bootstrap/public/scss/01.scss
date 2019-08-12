@@ -1,0 +1,77 @@
+$jd_red:#f10215;
+$width:100px;
+$centent:"子曾经曰过";
+$border-top:$width solid $jd_red;
+$jd_red:#fff !default;
+$jd_red:#000 !default;
+$myblue:#0aa1ed;
+$fontColor:#fff;
+$myheight:2.5rem;
+
+div{
+  border:{style:solid;width:10px;
+    color: #ffff00;}
+
+}
+
+
+nav,div,h1{
+  a{color:#f00;}
+}
+
+.mybtn{
+  width: 8rem;height:$myheight;
+  background: $myblue;
+  display: block;
+  color: $fontColor;
+  text-align: center;
+  line-height: $myheight;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  &:hover{color:$jd_red;}
+}
+
+
+a{color:#000;
+  &:hover{color:#ff0;}
+}
+
+#content{
+  div.top{
+    h1{color:#f00;}
+    p{background:#00f;}
+  }
+  div.bottom{width:100px;}
+}
+
+
+
+
+
+
+
+div{
+  color:$jd_red;
+  margin:$width;
+  border:$border-top;
+  border-bottom:2px solid $jd_red;
+  $myheight:200px;
+  height:$myheight;
+}
+div:before{
+  content:$centent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

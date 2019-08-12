@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scss基础语法</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+   <p></p>
+    <pre>
+        <h4>SCSS基础语法</h4>
+         <h5>       1.变量</h5>
+             使用$标识变量，变量名可以包含- _,命名规则基本上与css选择器相同
+             尽量做到见名知意。
+           总结
+             1.声明变量时，变量值可以引用其他变量
+             2.变量声明在{}外，整个scss文件都可以使用这个变量
+               变量声明在{}内，只用当前样式可以使用此变量
+             3.变量重复声明，后声明的变量会覆盖之前声明的，
+                尽量保证变量名称不重复
+                <span>$jd_red:#fff !default;</span>
+                !default规则：如果此变量在之前已经声明赋值了,
+                那么就使用之前的值，如果此变量之前没生命赋值，就使用现在的值
+          <h5>       2.嵌套</h5>
+              <span>#content{
+                div.top{
+                  h1{color:#f00;}
+                  p{background:#00f;}
+                }
+                div.bottom{width:100px;}
+               }</span>
+           自定转换成
+               <span>#content div.top h1 { color: #f00; }
+               #content div.top p { background: #00f; }
+               #content div.bottom { width: 100px; }</span>
+           注意：
+               伪类选择器在嵌套的时候，需要添加&代表父元素器，
+               不然会有一个空格，变成后代选择器
+               <span> a{color:#000;
+                  &:hover{color:#ff0;}
+               }</span>
+           群组选择器的嵌套
+               <span> nav,div,h1{
+                 a{color:#f00;}
+               }</span>
+           转换成如下css
+               <span>nav a, div a, h1 a {color: #f00; }</span>
+           属性嵌套
+                <span>div{
+                    border:{style:solid;width:10px;color: #ffff00;}
+                 }</span>
+            转换成下面样式
+                 <span>div {
+                    border-style: solid;
+                    border-width: 10px;
+                    border-color: #ffff00;
+                  }</span>
+          <h5>       3.导入</h5>
+               在scss语法中，如果一个scss文件以下划线开头，
+                  那么这个文件就是一个局部scss文件
+               scss文件在转换成css文件的时候，不会把局部文件进行转换,
+                  只转换不以下划线开头的文件
+               一般情况，我们会把局部文件引入到全局文件(不以下划线开头的)中。
+                 导入的语法    @import "dropdown";
+                 文件名叫做    _dropdown.scss
+                 导入的时候，  不写_  不写后缀
+               局部文件被导入后，局部文件中样式，会在全局文件转换的css中生成。
+               同时局部文件声明的变量，可以在全局文件中使用。
+           <h5>       4.混合器</h5>
+               把多个选择器都会使用的样式，封装进一个混合器。
+               需要使用的选择器，可以调用这个混合器。实现代码的重用。
+                          另，混合器可以带参数。
+             关键字： 声明混合器 @mixin
+                    调用混合器@include
+                   <span>@mixin my_border($width,$raidus){
+                        border:$width solid #f00;
+                        border-radius:$raidus ;
+                        outline:0;
+                    }
+                    div{ @include my_border(5px,5%);  }
+                      p{ @include my_border(1px,1%);  }
+                     h6{ @include my_border(2px,2%);  } </span>
+            <h5>       5.继承</h5>
+               一个选择器，可以继承另一个选择器的所有样式
+                    <span>.my-rounded{
+                      border:1px solid #f00;
+                      border-radius: 5px;
+                    }
+                    <span>.rounded-shadow{
+                      box-shadow: 0 0 10px;
+                      @extend .my-rounded;
+                    }</span>
+               在转换成css后，继承的表现方式为，群组选择器
+                   .my-rounded, .rounded-shadow {
+                     border: 1px solid #f00;
+                     border-radius: 5px;
+                    }    </span>
+          <h5>       6.运算</h5>
+               1.数字运算
+                   加、减、乘、除、余
+                加法:
+                      +
+                      除了做加法，还可以字符串拼接
+                      字符串拼接的时候
+                      如果用有引号的字符串去连接无引号的字符串
+                      结果是带引号
+                      如果用无引号字符串去连接有引号的字符串
+                      结果是不带引号
+                减法:
+                      -
+                      由于变量声明的时候可以使用-
+                      系统分不清楚 - 是不是属于变量名称
+                      所以我们写 - 的时候，要在 - 前后加空格
+                      width:$my-width150 - $my-width150;
+                 除法:
+                      在scss中 / 的作用是分割符
+                      以下情况，我们视为除法
+                          1.如果运算式两边的数字，是变量或者函数的返回值
+                            width:$width/2;
+                          2.被（）包裹时，是除法
+                            (500px/2);
+                          3.运算式是其他算数表达式的一部分
+                            5px+8px/2px
+                          4.在有引号的字符串中使用#{}可以做插值操作
+                          content:"liangliang ate #{50+30} baozis";
+
+                2.颜色运算
+                       #rrggbb和rgb(r,g,b)都是分段计算的
+                       红+红  绿+绿  蓝+蓝
+                       rgba(11,22,33,0.6)+ rgba(22,33,44,0.6)=
+                       rgba(33,55,77,0.6),前后两个透明度，必须相同才能计算
+
+
+    </pre>
+
+</div>
+</body>
+</html>	

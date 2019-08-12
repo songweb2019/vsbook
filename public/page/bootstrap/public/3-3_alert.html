@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息提示框</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p></p>
+    <pre>
+       <h4>信息提示框</h4>
+           外层div的class
+              alert  基本类
+              alert-danger/warning......  提示框颜色
+              alert-dismissible    为了修饰内部.close
+           内层 span，取消信息提示框的小叉叉
+              .close与父元素的. alert-dismissible配合使用
+           自定义属性 data-dismiss="alert"
+    </pre>
+
+    <h5>信息提示框</h5>
+    <div class="alert alert-danger alert-dismissible">
+        <span class="close" data-dismiss="alert">&times;</span>
+        不爱请点×
+    </div>
+
+</div>
+</body>
+</html>	

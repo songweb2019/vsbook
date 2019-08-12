@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	  body,h1,h2,h3,h4,h5,h6,p,ol,ul,pre,div{margin:0;padding:0;}
+	  pre{font:16px "微软雅黑";}	
+	  a{text-decoration:none;}
+	  a:hover{color:#ff4da6;}
+	  div{background:#dbd8bd;}
+	  span,h3{color:#f00;}
+	</style>
+	
+</head>
+<body>
+<!--返回底部 按钮  -->
+<center><button><a href="#db">返回底部</a></button></center>
+
+<!-- 目录 -->
+<h3>目录</h3><hr>
+<ol>
+<li><a href="#dom">&nbsp;&nbsp;&nbsp;&nbsp; ▷DOM</a></li>
+</ol>
+<br><hr><br>
+<!--练习：创建一个密码框，点击登录按钮，把文本框和密码框的值打印在控制台   
+  账号：<input id="t1" type="text"><br>
+  密码：<input id="p1" type="password" ><br>	
+  <button onclick="get_text()">登录</button>
+  <p id="p2">abcd</p>
+<br>
+<script>
+   function get_text(){
+    //dom操作，获取input的值
+    //1.获取input对象
+	var obj_text=document.getElementById("t1");
+	    console.log(obj_text);
+    //2.获取这个对象的value值
+	var content=obj_text.value;
+	    console.log(content);
+    var obj_pwd=document.getElementById("p1");
+        console.log(obj_password);
+	var upwd_content=obj_pwd.value;
+	    console.log(upwd_content);
+    //3.修改value值
+        obj_text.value="123456";
+    //4.获取修改p标签的内容
+	var obj_p=document.getElementById("p2");
+	   //alert(obj_p.innerHTML);
+        obj_p.innerHTML="1234567";
+   }
+</script> -->
+<h3>练习1：</h3>
+ <p id="p1"></p>
+    <input type="text" id="uname" onblur="uname_blur()" onfocus="uname_focus()">
+    <p id="p2"></p>
+    <input type="password" id="upwd" onblur="upwd_blur()" onfocus="upwd_focus()">
+<script>
+  //当uname获取焦点时，调用uname_focus()
+  //uname_focus()里，让p1显示一段文字
+  function uname_focus(){
+	//显示输入条件
+    p1.innerHTML="用户名8~12字母和数字";
+  }
+  //当uname失去焦点时，调用uname_blur()
+  //uname_blur()里，做非空验证，把结果显示在p1中
+  function uname_blur(){
+    if(uname.value==""){
+	  p1.innerHTML="用户名不能为空";
+	}else{
+	  p1.innerHTML="通过";
+	}
+  }
+  //upwd获取焦点时，调用upwd_focus()
+  //upwd_focus()里，让p2显示一段文字
+  function upwd_focus(){
+	//显示输入条件
+    p2.innerHTML="密码为8~12字母和数字";
+  }
+  //当upwd失去焦点时，调用upwd_blur()
+  //upwd_blur()里，做非空验证，把结果显示在p2中
+  function upwd_blur(){
+    if(upwd.value==""){
+	  p2.innerHTML="密码不能为空";
+	}else{
+	  p2.innerHTML="通过";
+	}
+  }
+</script>
+<br><hr><br>
+<h3>练习2：</h3>
+  <input type="text" id="t1">
+  <div id="d1">123</div>
+  <button onclick="show()">提交</button>
+<script>
+   function show(){
+	 //把文本框中录入的内容，变为div中h1>a的内容
+     d1.innerHTML="<h1><a href='#'>"+t1.value+"</a></h1>"  
+   }
+</script>
+<h3>练习3：</h3>
+<input type="text" id="t3">
+  <p id="p3">abcd</p>	
+  <div id="d3"></div>
+  <button onclick="get_text()">提交</button>
+  <script>
+    function get_text(){
+	//需求：点击按钮，把文本框中的数据显示在p标签
+      //ES6对使用id获取元素对象做了简化
+      //直接用id就可以代表对象
+       p3.innerHTML=t3.value
+	  //使用innerHTML改变html的结构
+	   d3.innerHTML="<h2><a href='#'>123</a></h2>";
+      //把文本框中录入的内容，变为div中h1>a的内容
+       d3.innerHTML="<h1><a href='#'>"+t3.value+"</a></h1>";
+
+//1.获取text和p的对象
+var obj_text=document.getElementById("t3");
+var obj_p=document.getElementById("p3");
+//2.把text的value赋值给p的innerHTML
+obj_p.innerHTML=obj_text.value;
+     }
+ </script>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<h3>正文</h3><hr>
+<pre><div>
+<h3 id="dom"> ▷DOM(简易dom操作)</h3>
+    1.找到元素对象
+    2.改变这个对象的内容，值，或者样式
+	  ajax提交请求，不需要使用form表单
+	  但是，form表单自带收集数据的功能
+	  不是用form标签，就没有自动收集数据的功能了
+	  我们需要使用js的dom操作，手写代码，收集数据
+
+     ▷使用dom：
+       1.获取元素对象
+              var obj=document.getElementById("id"); 
+            ES6支持的简写方式
+            使用元素的id，直接表示元素对象
+              id.innerHTML=id.value
+       2.获取、修改元素的内容/值(input的数据,叫做值value)
+            获取     var val=id.value
+            修改     id.value="新值"
+         获取双标签的内容(双标签的数据，叫内容innerHTML)
+            获取     var content=id_innerHTML;
+            修改     id.innerHTML="新内容"
+      3.innerHTML详解
+	     innerHTML是该元素，开始标签和关闭标签之间的部分
+               &lt;div id="d1"&gt;
+                   &lt;h1&gt;
+                       &lt;a href="#"&gt;&lt;/a&gt;
+                  &lt;/h1&gt;
+               &lt;/div&gt;
+	     d1.innerHTML="&lt;h2&gt;&lt;a href='#'&gt;123&lt;/a&gt;&lt;/h2&gt;"
+	     d1.innerHTML是可以动态的修改html页面元素结构
+      4.事件 onclick
+	     通过用户的行为来激发的操作就是事件
+	     常用事件 onclick="fn()"
+             onblur 焦点移除事件，当失去焦点，调用js
+             onfocus 获取焦点事件，当元素获得焦点时，调用js
+			 body的事件,页面加载完成，马上激发
+			 onload
+
+</div></pre>
+<!-- 返回顶部 -->
+<center><button><a id="db" href="#">返回顶部</a></button></center>
+</body>
+</html>

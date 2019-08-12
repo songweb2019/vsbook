@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态框</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p></p>
+    <pre>
+      <h4>模态框</h4>
+        模态框modal是覆盖在父窗体上的一个子窗体
+        模态框可以在不离开父窗体的情况下与用户有一些互动
+        <img src="ht_img/3-10_01.png" alt=""/>
+
+    </pre>
+    <!-- 用于打开模态框的按钮-->
+    <button data-toggle="modal" data-target="#mymodal" class="btn btn-danger">打开模态框</button>
+    <!-- 模态框-->
+    <div id="mymodal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>用户信息收集</h4>
+                    <button class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    请输入姓名
+                    <input type="text"/>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-success btn-sm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>	

@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>form表单类型和属性</title>
+	<style>
+	  body,h1,h2,h3,h4,h5,h6,p,ol,ul,pre,div{margin:0;padding:0;}
+	  pre{font:16px "微软雅黑";}	
+	  a{text-decoration:none;}
+
+	  div{background:#dbd8bd;}
+	  span,h3{color:#f00;}
+	  a{text-decoration:none;}
+	  a:visited{color:#000;}
+	  a:hover{color:#ff4da6;}
+/*	a:link{color:#000;}*/
+/*	a:active{color:#000;}*/	
+/*	li{list-style:none;}	*/
+  </style>
+  <script>
+   function	show(){alert(1111);}
+  </script>
+</head>
+<body>
+<!--返回底部 按钮  -->
+<div><center><button><a href="#db">返回底部</a></button></center></div>
+
+<!-- 目录 -->
+<hr><h2><a>目录</a></h2>
+<div><ul><br>
+<li><a href="#zyzc">&nbsp;&nbsp;&nbsp;&nbsp;表单的作用和组成</a></li>
+<li><a href="#bdform">&nbsp;&nbsp;&nbsp;&nbsp;表单form</a></li>
+<li><a href="#bdkj">&nbsp;&nbsp;&nbsp;&nbsp;表单控件</a></li>
+<li><a href="#input">&nbsp;&nbsp;&nbsp;&nbsp;input元素</a></li>
+<li><a href="#inputxj">&nbsp;&nbsp;&nbsp;&nbsp;input元素详解:</a></li>
+<ul><li><a href="#input1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.文本框密码框和按钮</a></li><li><a href="#input2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.按钮</a></li><li><a href="#input3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.单选/复选按钮</a></li><li><a href="#input4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. 隐藏域</a></li><li><a href="#input5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.文件选择框</a></li></ul>
+<li><a href="#dhwby">&nbsp;&nbsp;&nbsp;&nbsp;多行文本域</a></li>
+<li><a href="#label">&nbsp;&nbsp;&nbsp;&nbsp;关联文本与表单控件</a></li>
+<li><a href="#wkjfz">&nbsp;&nbsp;&nbsp;&nbsp;为控件分组</a></li>
+<li><a href="#newinput">&nbsp;&nbsp;&nbsp;&nbsp;新表单控件</a></li>
+	  
+</ul><br></div>
+<br><br><br><br><br>
+<h2><a>form表单类型和属性：</a></h2>
+<hr><pre><div>
+<h3 id="zyzc">表单的作用和组成</h3>
+表单的作用:	
+       1.提供可视化的输入控件
+       2.收集用户输入的信息，并提交请求给服务器
+总结
+       <span>form自带提交请求的功能</span>
+       <span>ajax提交不需要form支持</span>
+
+表单的组成:
+     1.前端部分
+            提供表单控件，与用户交互的可视化控件
+     2.后端部分
+            后台接口对提交的数据进行处理
+<br><hr><br>
+<h3 id="bdform">表单form</h3>
+  <span>&lt;form action="" method="" enctype=""&gt;&lt;/form&gt;</span>
+    属性：
+        1. action="" 定义表单提交时发送的动作(接口url)    
+		            如果没有值，默认提交给本页
+        2. method="" 定义表单提交方式
+                取值：
+                       <span>1.get 默认值</span>
+                         特点：明文提交，提交的内容会显示在浏览器地址栏上(不安全)
+                         提交的数据有大小限制，最大为2kb
+                         <span>向服务器要数据时，使用get方法</span>
+                       <span>2.post</span>
+                         特点：隐式提交，提交的数据不会在地址栏显示
+                         提交数据没有大小限制
+                         <span>要传递数据给服务器的时候，使用post</span>
+                       3.其它方法
+                          delete    put    option
+
+        3. enctype=""
+                指定表单数据的编码方式
+                允许将什么样的数据提交给服务器
+                取值：
+	      <span>1.application/x-www-form-urlencoded</span>  默认值，允许将任意字符提交给服务器(文件除外)
+              2.text/plain 允许提交普通字符给服务器
+              3.multipart/form-data 允许提交文件给服务器
+<br><hr><br><h3 id="bdkj">表单控件</h3>
+     表单控件，在form标签中，能够与用户进行交互的可视化元素
+     分类:
+         input元素  基础9种，h5新标签10种
+         textarea   多行文本域
+         select和option 下拉选
+         其它元素：label元素 为控件分组 浮动框架 新表单元素
+<br><hr><br><h3 id="input">input元素</h3>
+     &lt;input type="" name="" value="" disabled&gt;
+         在页面中，提供了各式各样的输入控件
+         比如，文本框，密码，单选按钮，多选按钮等等
+         属性：
+            type：    指定input元素的类型
+            <span>name：  为控件定义名称，提供给服务器端使用（name必须写）</span>
+            value：   控件的值，传递给服务器的值
+                           例外，对于按钮来说，value是设置按钮显示的内容
+            disabled：禁用，<span>不能修改值，也不能提交</span>
+                          无值属性，在标签使用的时候，不写值
+                          后期使用js修改值，认为该值为true
+
+</div><br><hr><br><center><button><a href="#">返回顶部</a></button></center><h2 id="inputxj">input元素详解</h2>
+<h3 id="input1">&nbsp;&nbsp;&nbsp;&nbsp;1.文本框和密码框</h3><form action="" method="get" enctype="application/x-www-form-urlencoded" >
+         文本框：<input type="text" maxlength="6" placeholder="请输入用户名" name="uname" value="">
+         密码框：<input type="password" maxlength="12" placeholder="请输入密码" name="upwd"></form>
+<div>
+   文本框和密码框
+      文本框 <span>type="text"</span>
+      密码框 <span>type="password"</span>
+   属性   maxlength 指定输入的最大长度
+           <span> readonly 无值属性， 只能读，不能写，可以提交
+            placeholder 占位提示符，默认显示在控件上的文本</span>
+
+</div>
+ <h3 id="input2">&nbsp;&nbsp;&nbsp;&nbsp;2.按钮</h3><form action="">
+           文本框： <input type="text" name="uname" value="">
+         提交按钮：<input type="submit" value="提交">
+         普通按钮：<input type="button" onclick="show()" value="js">
+         重置按钮：<input type="reset" value="重置"></form>
+<div>
+   按钮
+         提交按钮 <span>type="submit"</span>     将表单中的数据收集整理发送给服务器
+         普通按钮 <span>type="button"</span>     没有功能，配合事件，调用js代码
+         重置按钮 <span>type="reset"</span>        将当前表单的内容恢复到初始化状态
+   属性  value 设置按钮上的文字，此value不提交
+
+</div>
+<h3 id="input3">&nbsp;&nbsp;&nbsp;&nbsp;3.单选/复选按钮：</h3><form action="">
+         单选按钮：<input type="radio" name="gender" value="man" >男<input type="radio" name="gender" value="woman">女<input type="radio" name="gender" value="unknow" checked>未知
+
+         复选按钮：<input type="checkbox" name="hobby[]" value="eat">吃<input type="checkbox" name="hobby[]" value="drink">喝<input type="checkbox" name="hobby[]" value="play" checked>玩<input type="checkbox" name="hobby[]" value="happy">乐       <input type="submit" value="提交"></form>
+<div>
+   单选/复选按钮
+        单选按钮 <span>type="radio"</span>
+                必须有value属性，不然传递值永远是on
+        复选按钮 <span>type="checkbox"</span>
+                name属性必须是数组
+        属性 name除了定义控件名称之外，还起到分组的作用
+                checked 设置默认被选中项，无值属性
+
+</div>	
+<h3 id="input4">&nbsp;&nbsp;&nbsp;&nbsp;4. 隐藏域</h3><form action="">
+         隐藏域：<input type="hidden" name="uid" value="love">
+         <input type="submit" value="提交"></form>
+<div>
+    隐藏域
+         <span>type="hidden"</span>
+                想把数据提交给服务器，但是不想展示给用户看
+                这种数据，放到隐藏域中
+                用户看不见，却又可以提交
+
+</div>
+<h3 id="input5">&nbsp;&nbsp;&nbsp;&nbsp;5.文件选择框</h3><form action="" method="post" enctype="multipart/from-data">
+  <input type="file" name="pic" multiple></form>
+<div>
+    文件选择框（上传文件使用）
+         <span>type="file"</span>
+             注意：使用文件选择框有两个前提
+                     1.必须使用post方法提交
+                     2.需要把form的enctype属性，设置为multipart/form-data
+                     post方法提交，无法在地址栏显示
+             属性：multiple 无值属性，选择多个文件
+
+</div>
+<div><center><button><a href="#">返回顶部</a></button></center></div><br><h3 id="dhwby">&nbsp;&nbsp;多行文本域</h3><form action="">
+<textarea name="wen"cols="30" rows="2" readonly>从前有一座山，山里有一座庙，庙里住着一个老和尚</textarea>
+ <input type="submit"></form>
+<div>
+    多行文本域
+       <span>&lt;textarea&gt;&lt;/textarea&gt;</span>
+         允许录入多行文本
+      cols="5" rows="3"  根据计算机硬件的不同，不准确
+
+</div>
+<h3 id="xlxz">&nbsp;&nbsp;下拉选择</h3><form action="">
+  <select name="dinner" size="3" multiple> 
+    <option value="xg">西瓜</option>
+    <option value="jz">橘子</option>
+    <option value="pt" selected>葡萄</option>
+    <option value="cm">草莓</option>
+    <option value="xj">香蕉</option>
+	<option value="pg">苹果</option>
+  </select>
+	
+  <select name="shuiguo">
+    <option>西瓜</option>
+    <option>橘子</option>
+    <option>葡萄</option>
+    <option>草莓</option>
+    <option>香蕉</option>
+    <option>苹果</option>
+   </select>    <input type="submit" ></form>
+<div>
+    下拉选
+        <span>&lt;select&gt;
+          &lt;option&gt;&lt;/option&gt;
+          &lt;option&gt;&lt;/option&gt;
+          ......
+        &lt;/select&gt;</span>
+    注意：
+          1.如果option没有value属性，select的value等于被选中的option的内容
+          2.如果option有value值，select的value值是选中option的value
+    属性:
+        select:  
+                 name 
+                 value
+                  size       默认值为1,1的时候是下拉选择框
+                               >1的时候，是滚动选择框
+              multiple    无值属性，设置多选
+        option:
+                  value     定义选项的值
+               selected   无值属性，默认选中
+
+</div>
+<h3 id="label">&nbsp;&nbsp;关联文本与表单控件</h3><form action="">	
+     <input type="checkbox" id="auto"><label for="auto">自动登录</label></form>
+<div>
+    label元素 
+	<span>&lt;input type="checkbox" id="auto"&gt;&lt;label for="auto"&gt;自动登录&lt;/label&gt;</span> 
+         关联文本与表单控件     
+         属性for,绑定要关联的表单控件的id值
+         效果，点击label文本，被关联的控件也被点中
+
+</div>
+<h3 id="wkjfz">&nbsp;&nbsp;为控件分组</h3><form action="">
+<fieldset><legend>用户名/密码</legend><input type="text">
+<input type="password"></fieldset>
+<fieldset><legend>性别</legend><input type="radio" name="gender" value="man" >男<input type="radio" name="gender" value="woman"checked>女<input type="radio" name="gender" value="unknow">不详</fieldset></form>
+<div>
+   为控件分组
+      <span>&lt;fieldset&gt;&lt;/fieldset&gt;</span>  为控件分组
+      <span>&lt;legend&gt;&lt;/legend&gt;</span>   分组的标题
+
+</div>
+<div><center><button><a href="#">返回顶部</a></button></center></div>
+<h3 id="newinput">&nbsp;&nbsp;新表单控件</h3><form action="">
+  <input type="email" name="email">1.电子邮件<!-- 1.电子邮件 提交时验证@ -->
+  <input type="search" name="search">2.搜索类型<!-- 2.搜索类型 自带快速清除功能 -->
+  <input type="url" name="url">3.url类型验证<!-- 3.url类型验证 提交的时候验证有http://开头-->
+  <input type="tel" name="tel">4.电话号码<!-- 4.电话号码 移动端使用时弹出虚拟键盘-->
+  <input type="number" max="10" min="5" step="2">5.数字类型<!-- 5.数字类型 max最大值 min最小值 step 步长-->
+  <input type="range" max="20" min="15" step="">6.范围类型<!-- 6.范围类型 max最大值 min最小值 step 步长 -->
+  <input type="color">7.颜色类型<!-- 7.颜色类型 -->
+  <input type="date">8.日期类型<!-- 8.日期类型 提供一个日期选择控件-->
+  <input type="month">9.月份类型<!-- 9.月份类型 -->
+  <input type="week">10.周类型<!-- 10.周类型 -->
+
+           <button>提交</button>                           
+
+<div>
+     新表单元素
+     在html5版本中，新提出来的表单控件
+    1.邮箱，提交的时候验证@及@后面有一个字节
+         <span>&lt;input type="email" name="email"&gt;</span>
+    2搜索类型，自带快速清除功能
+         <span>&lt;input type="search" name="search"&gt;</span>
+    3. url类型验证，提交的时候验证有http://开头
+         <span>&lt;input type="url" name="url"&gt;</span>
+    4.电话号码，移动端使用时，弹出虚拟键盘
+         <span>&lt;input type="tel" name="tel"&gt;</span>
+    5.数字类型
+         <span>&lt;input type="number" max="10" min="5" step="2"&gt;</span>
+           max="10" 能接受的最大值
+           min="5"  能接受的最小值
+           step="2"  步长 
+    6.范围类型
+         <span>&lt;input type="range"&gt;</span>
+            max="20" 
+            min="16" 
+            step="2"  同上
+    7.颜色类型
+         <span>&lt;input type="color"&gt;</span>
+    8.日期类型，提供了一个日期选择控件
+         <span>&lt;input type="date"&gt;</span>
+    9.月份类型，提供了一个月份选择控件
+         <span>&lt;input type="month"&gt;</span>
+   10.周类型
+         <span>&lt;input type="week"&gt;</span>
+
+</div>
+</pre>
+<!-- 返回顶部 -->
+<hr><div><center><button><a id="db" href="#">返回顶部</a></button></center></div>	
+</body>
+</html>

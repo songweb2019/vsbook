@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>辅助类-边框、浮动、显示、背景颜色、圆角、内外边距、尺寸</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p></p>
+    <pre>
+        <h5>辅助类</h5>
+        1.边框
+          border/border-0 基本类
+          border-danger/warning...边框颜色
+          border-left/top/right/bottom 单边设置
+          border-left-0 单边框清0
+        2.浮动
+          float-xl/lg/md/sm-left/right/none  响应式浮动
+          清除浮动 clearfix 写在父元素
+        3.显示
+          visible/invisible 显示/隐藏
+        4.背景颜色
+          bg-danger/warning/success.....
+        5.圆角
+          rounded/rounded-0 圆角0.25rem/去掉圆角
+          rounded-top/right/bottom/left
+        6.内外边距
+          m-auto 水平居中
+          m/mt/mr/mb/ml/mx/my-*-0/1/2/3/4/5 外边距
+          0   0.25    0.5   1   1.5   3
+          p/pt/pr/pb/pl/px/py-*-0/1/2/3/4/5 内边距
+          *:xl/lg/md/sm
+          mt-lg-3 mt-sm-1
+        7.尺寸
+          w-n(n:25/50/75/100)
+          h-n
+    </pre>
+    <div class="clearfix">
+        <div class="border border-danger rounded float-lg-left float-md-right float-sm-none visible bg-warning rounded-top">d111111111111111111</div>
+        <div class="border border-warning rounded-circle float-lg-left float-md-right float-sm-none m-0 px-lg-1 w-25">d222222222222222222</div>
+    </div>
+</div>
+</body>
+</html>	

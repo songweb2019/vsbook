@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scss样式</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+   <p></p>
+    <pre>
+   <h3 class="text-center">bootstrap重点：响应式+栅格布局+SCSS</h3>
+       <h4>SCSS 动态的样式语言 （nodejs 8.11以上）</h4>
+          css有以下几个缺点
+              语法不够强大，没有变量和合理的样式复用机制
+              导致难以维护
+              我们要使用动态样式语言，赋予css新的特性
+              提高样式语言的可维护性
+          常见的动态样式语言
+              1.scss/sass (scss兼容sass，scss更接近css语法)
+              2.stylus
+              3.Less
+       <h4>scss  boot的订制</h4>
+           SCSS是一款强化css的辅助工具
+              它和css的语法很像,在CSS的基础上，
+              添加了变量，嵌套，混合，导入，函数等高级功能。
+              这些拓展命令让css更加强大与优雅
+              浏览器不能直接解析运行scss文件，需要在项目中把scss转义成css文件。
+              让浏览器解析。
+              scss可以让css开发更高效
+           <h5>    1.SCSS的使用</h5>
+           scss在服务器端使用
+              1.安装nodejs解释器 v8.11以上
+              2.在线安装scss
+              在cmd控制台打印命令
+                 npm install -g node-sass
+              3.无网络的安装
+                 node-sass -v
+              4.测试是否安装正确
+                 cmd中打印 node-sass -v 显示版本
+           <h5>    2.SCSS文件转换成CSS文件</h5>
+           1.单文件转换
+               node-sass scss/01.scss css/01.css
+               scss/01.scss 要转换的sc    ss文件名和目录
+               css/01.css 转换后的css文件名和目录
+               保证执行命令的路径是scss/01.scss 的父级
+               可以在电脑中打开项目的路径，在路径文件夹下
+               按住shift点击鼠标右键，打开powershell窗口 输入上面命令
+           2.多文件转换，文件夹转换（一个命令把一个文件夹下所有的.scss都转换）
+               node-sass scss(文件夹名称) -o css(文件夹名称)
+           3.单文件监听
+               node-sass -w scss/01.scss css/01.css
+               开启，系统会盯着01.scss文件，当01.scss内容发生改变，
+               保存的时候，自动转换为01.css
+           4.多文件夹监听
+               node-sass -w scss -o  css
+    </pre>
+
+</div>
+</body>
+</html>	

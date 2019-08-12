@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scss函数</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+   <p></p>
+    <pre>
+     <h4>函数</h4>
+          1.scss定义了很多函数，有些函数甚至可以直接在css语句中调用
+                rgba(r,g,b,alpha)
+                hsl(h,s,l)
+                h:hue  色调    取值0~360，3个色段，120一个
+                s：saturation  饱和度 0.0%~100.0%
+                l：lightness   亮度 0.0%~100.0%
+          2.数学函数
+                round($val)   四舍五入
+                 ceil($val)   向上取整
+                floor($val)   向下取整
+                min($v1,$v2.....)
+                max($v1,$v2.....)
+                     random   随机数
+          3.字符串函数
+                 unquote($str)  去掉$str的双引号
+                 quote($str)    给$str添加双引号
+                 to_upper_case($str);  $str变大写
+                 to_lower_case($str);  $str变小写
+          4.自定义函数
+                 @function get-width($n,$m){
+                     @return $n - $m;
+                 }
+          5.指令
+                 @if(){}
+                 @else if(){}
+                 @else{}
+                 注意：bool值的小括号可以去掉
+    </pre>
+
+</div>
+</body>
+</html>	

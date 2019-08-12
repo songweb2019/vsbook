@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性布局</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+   </style>
+</head>
+<body>
+<div class="container">
+  <p></p>
+    <pre>
+       <h4> 弹性布局</h4>
+          d-block/inline/inline-block/none      display所有值
+          d-*- block/inline/inline-block/none   display的响应式
+             <span>*：xl/lg/md/sm</span>
+          使用弹性布局，要在父元素上写class  <span>d-flex</span>
+             d-flex/d-inline-flex创建一个弹性容器
+          1.主轴方向
+             flex-row/column/row-reverse/column-reverse
+          响应式设置
+             flex-*-row/column/row-reverse/column-reverse
+             <span>*：xl/lg/md/sm</span>
+          2.项目在主轴上的排列方式
+             justify-content-start/center/end/between/around
+          响应式设置
+             justify-content-*-start/center/end/between/around
+          boot对弹性布局，做了响应式封装
+          让开发者非常灵活的做响应式布局
+    </pre>
+    <h5>弹性布局</h5>
+    <div class="d-flex border border-dark flex-sm-column flex-lg-row justify-content-lg-between justify-content-sm-end">
+        <div class="bg-warning">item1</div>
+        <div class="bg-danger">item2</div>
+        <div class="bg-success">item3</div>
+    </div>
+</div>
+</body>
+</html>	

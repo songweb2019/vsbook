@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>栅格布局</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+        .row{border:2px solid #f00;}
+        .row>div{border:2px solid #00f;}
+        .container>.row>div>div>div{border:2px solid #000;}
+    </style>
+</head>
+<body>
+<div class="container">
+   <p></p>
+    <pre>
+      <h4>栅格布局（重点）</h4>
+        1.web页面的布局方式一般三种
+        <span>table        布局简单，易控制                              语义错误，渲染效率低
+        div+css	     语义正确，渲染效率高                          控制起来很麻烦
+        Boot栅格布局  简单，易控制，语义正确，渲染效率高，支持响应式  非常复杂的页面不适用</span>
+        2.栅格使用
+            1.必须要放在.container或者.container-fluid中
+            2.每一行都是一个row(弹性，主轴是x，可以换行，左右-15px外边距)
+            3.在row中声明col占几份
+            <img src="ht_img/2-7_01.png" width="40%"/>
+        3.响应式栅格
+            针对不同屏幕需要使用不同的列
+            一行4列，大屏幕一行四个div 1:1:1:1，中屏幕一行两个div1:1
+            小屏幕，一行一个div
+            <img src="ht_img/2-7_02.png" width="40%"/>
+        4.栅格布局
+            .container--->row--->col
+            row的直接子元素只能是col
+            一个row分为12份，使用col-n来控制子元素占地几份
+            <img src="ht_img/2-7_03.png" width="60%"/>
+            使用.col类，不添加数字时，自动处理布局
+            每一个col    平均分配空间，col个数可以超过12个
+            <span>注意：，不同屏幕有向上兼容的问题
+                col-xl-*   只能在xl屏幕有效
+                col-lg-*   在xl/lg 有效
+                col-md-*   在xl/lg/md 有效
+                col-sm-*   在xl/lg/md/sm 有效</span>
+        5.列偏移
+            可以通过列偏移指定该列及后面的列向右移动
+             offset-*-n  *: xl/lg/md/sm
+        6.栅格嵌套
+             在col中重新写一个div.row
+    </pre>
+    <h5>一行4列，大屏幕一行四个div 1:1:1:1，中屏幕一行两个div1:1,小屏幕一行一个div
+    </h5>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12">1</div>
+        <div class="col-lg-3 col-md-6 col-sm-12">2</div>
+        <div class="col-lg-3 col-md-6 col-sm-12">3</div>
+        <div class="col-lg-3 col-md-6 col-sm-12">4</div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <div class="row">
+        <div class="col-1">col-1</div>
+    </div>
+    <div class="row">
+        <div class="col-2">col-2</div>
+    </div>
+    <div class="row">
+        <div class="col-3">col-3</div>
+    </div>
+    <div class="row">
+        <div class="col-4">col-4</div>
+    </div>
+    <div class="row">
+        <div class="col-5">col-5</div>
+    </div>
+    <div class="row">
+        <div class="col col-6">col-6</div>
+    </div>
+    <div class="row">
+        <div class="col col-7">col-7</div>
+    </div>
+    <div class="row">
+        <div class="col col-8">col-8</div>
+    </div>
+    <div class="row">
+        <div class="col col-9">col-9</div>
+    </div>
+    <div class="row">
+        <div class="col col-10">col-10</div>
+    </div>
+    <div class="row">
+        <div class="col col-11">col-11</div>
+    </div>
+    <div class="row">
+        <div class="col col-12">col-12</div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+        <div class="col">5</div>
+        <div class="col">6</div>
+        <div class="col">7</div>
+        <div class="col">8</div>
+        <div class="col">9</div>
+        <div class="col">10</div>
+        <div class="col">11</div>
+        <div class="col">12</div>
+        <div class="col">13</div>
+        <div class="col">14</div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h5>列偏移</h5>
+    <div class="row">
+        <div class="col-3"><div></div></div>
+        <div class="col-3">第二列</div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h5>栅格嵌套</h5>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-5">5</div>
+                <div class="col-7">7</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>	

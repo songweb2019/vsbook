@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="container table-responsive">
+  <p></p>
+  <pre>
+    <h5>table相关的样式</h5>
+        .table            对table本身和table的后代布局
+        .table-bordered   一个有边框的表格.为自己和后代添加边框
+        table-danger/warning/success/info   表格颜色
+        table-striped    隔行变色
+        table-hover      带鼠标悬停效果的表格
+        table-responsive-xl/lg/md/sm        响应式表格 写在table的父元素上
+ </pre>
+    <table class="table table-bordered table-danger table-striped table-hover">
+        <tr>
+            <td>序号</td>
+            <td>名称</td>
+            <td>类型</td>
+        </tr>
+        <tr>
+            <td>1001</td>
+            <td>魔女</td>
+            <td>异能</td>
+        </tr>
+        <tr>
+            <td>1002</td>
+            <td>汉娜</td>
+            <td>杀手</td>
+        </tr>
+        <tr>
+            <td>1003</td>
+            <td>极速60秒</td>
+            <td>偷车</td>
+        </tr>
+    </table>
+
+
+</div>
+</body>
+</html>	

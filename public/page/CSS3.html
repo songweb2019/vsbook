@@ -1,0 +1,1426 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS</title>
+    <style>
+	  body,h1,h2,h3,h4,h5,h6,p,ol,ul,pre,div,hr{margin:0;padding:0;}
+	  pre{font:16px "微软雅黑";}	
+	  a{text-decoration:none;}
+	  a:hover{color:#ff4da6;}
+	  div{background:#dbd8bd;}
+	  span,h3,h4{color:#f00;}
+
+	</style>
+</head>
+<body>
+<hr><div align="center"><a href="#db">回到底部</a></div><hr>
+<h3>目录</h3><br>
+<ul>
+   <li><a href="#css">&nbsp;&nbsp;&nbsp;&nbsp;1.CSS概述</a>
+     <ul>
+	   <li><a href="#css1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1CSS是什么 </a></li>
+	   <li><a href="#css2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2作用</a></li>
+	   <li><a href="#css3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3HTML与CSS的关系</a></li>
+	   <li><a href="#css4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4CSS与HTML的属性，使用原则</a></li>
+	 </ul>
+   </li>
+   <li><a href="#cssyf">&nbsp;&nbsp;&nbsp;&nbsp;2.CSS的语法规范</a>
+    <ul>
+	  <li><a href="#cssfs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1使用css的方式</a>
+	    <ul>
+		  <li><a href="#css211">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.1行内样式，内联样式</a></li>
+		  <li><a href="#css212">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.2内部样式</a></li>
+		  <li><a href="#css213">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.3外联样式</a></li>
+		</ul>
+	  </li>
+	   <li><a href="#csstx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2CSS的特性</a>
+	   	 <ul>
+		  <li><a href="#css221">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.1继承性</a></li>
+		  <li><a href="#css222">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.2层叠性</a></li>
+		  <li><a href="#css223">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.3样式的优先级</a></li>
+		</ul>
+	   </li>
+	</ul>
+   </li>
+   <li><a href="#xzq">&nbsp;&nbsp;&nbsp;&nbsp;3.基础选择器</a>
+     <ul>
+	   <li><a href="#xzqzy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1选择器的作用</a></li>
+	   <li><a href="#xzqxj">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2基础选择器详解</a>
+	     <ul>
+		 	 <li><a href="#xzq321">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.1通用选择器</a></li>
+		 	 <li><a href="#xzq322">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.2元素选择器</a></li>
+		 	 <li><a href="#xzq323">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.3ID选择器</a></li>
+		 	 <li><a href="#xzq324">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.4类选择器</a></li>
+		 	 <li><a href="#xzq325">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.5群组选择器</a></li>
+		 	 <li><a href="#xzq326">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.6后代选择器</a></li>
+		 	 <li><a href="#xzq327">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.7子代选择器</a></li>
+		 	 <li><a href="#xzq328">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.8伪类选择器</a></li>
+		 	 <li><a href="#xzq329">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.9选择器的权值</a></li>
+		 </ul>
+	   </li>
+	 </ul>
+   </li>
+   <li><a href="#ccbk">&nbsp;&nbsp;&nbsp;&nbsp;4.尺寸和边框</a>
+     <ul>
+	   <li><a href="#cc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1尺寸
+	   </a>
+	     <ul>
+	         <li><a href="#ccsx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.1尺寸属性</a></li>
+	         <li><a href="#ccys">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.2页面中允许设置尺寸的元素</a></li>
+	         <li><a href="#yccl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.3溢出处理</a></li>
+	         <li><a href="#dw">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.4 附加知识点---单位&颜色&项目思路</a></li>
+	     </ul>
+	   </li>
+	   <li><a href="#bk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2边框</a>
+         <ul>
+	         <li><a href="#bkjx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.1边框的简写方式</a></li>
+	         <li><a href="#bkdb">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.2边框的单边设置</a></li>
+	         <li><a href="#bkdj">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.3边框的倒角(圆角)</a></li>
+	         <li><a href="#bkyy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2.4 边框的阴影</a></li>
+	     </ul>	   
+	   </li>
+    </ul>
+   </li>
+   <li><a href="#kmx">&nbsp;&nbsp;&nbsp;&nbsp;5.框模型、内外边距</a>
+   <ul>
+	   <li><a href="#kmx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1框模型--盒子模型
+	   </a></li>
+	   <li><a href="#margin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2外边距
+	   </a></li>
+	   <li><a href="#padding">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3内边距
+	   </a></li>
+	   <li><a href="#box-sizing">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.4box-sizing属性
+	   </a></li>
+   </ul>
+   </li>
+   <li><a href="#bg">&nbsp;&nbsp;&nbsp;&nbsp;6.背景</a>
+      <ul>
+	     <li><a href="#bgjx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1背景简写
+	     </a></li>
+       </ul>
+   </li>
+   <li><a href="#jb">&nbsp;&nbsp;&nbsp;&nbsp;7.渐变</a>
+      <ul>
+	     <li><a href="#jb1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1线性渐变
+	     </a></li>
+	     <li><a href="#jb2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.2径向渐变
+	     </a></li>
+	     <li><a href="#jb3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3重复渐变
+	     </a></li>
+	     <li><a href="#jb4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4浏览器兼容问题(ie8.0以下不考虑)
+	     </a></li>
+       </ul>
+   </li>
+   <li><a href="#txt">&nbsp;&nbsp;&nbsp;&nbsp;8.文本格式化</a>
+      <ul>
+	     <li><a href="#txt1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1字体属性
+	     </a></li>
+	     <li><a href="#txt2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.2文本属性
+	     </a></li>
+       </ul>   
+   </li>
+   <li><a href="#table">&nbsp;&nbsp;&nbsp;&nbsp;9.表格</a>
+       <ul>
+	     <li><a href="#table1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.1表格的常用属性
+	     </a></li>
+	     <li><a href="#table2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2表格的特有属性
+	     </a></li>
+       </ul>  	   
+   </li>
+   <li><a href="#position">&nbsp;&nbsp;10.定位</a>
+       <ul>
+	     <li><a href="#pos1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.1普通流定位
+	     </a></li>
+	     <li><a href="#pos2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.2浮动定位
+	     </a></li>
+	     <li><a href="#pos3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.3相对定位
+	     </a></li>
+	     <li><a href="#pos4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.4绝对定位
+	     </a></li>
+	     <li><a href="#pos5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.5 固定定位
+	     </a></li>
+       </ul>  	   
+   </li>
+   <li><a href="#display">&nbsp;&nbsp;11.显示</a>
+       <ul>
+	     <li><a href="#dis1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.1显示方式
+	     </a></li>
+	     <li><a href="#dis2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.2显示效果
+	     </a></li>
+	     <li><a href="#dis3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.3透明度
+	     </a></li>
+	     <li><a href="#dis4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.4垂直对齐方式
+	     </a></li>
+	     <li><a href="#dis5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.5光标的设置
+	     </a></li>
+       </ul>  	   	   
+   </li>
+   <li><a href="#list">&nbsp;&nbsp;12.列表的样式</a></li>
+   <li><a href="#core">&nbsp;&nbsp;13.CSS3 CORE</a>
+    <ul>
+	     <li><a href="#cor1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12.1兄弟选择器
+	     </a></li>
+	     <li><a href="#cor2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12.2属性选择器
+	     </a></li>
+	     <li><a href="#cor3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12.3伪类选择器
+	     </a></li>
+       </ul>  	
+   </li>
+   <li><a href="#tx">&nbsp;&nbsp;14.弹性布局</a>
+   	   <ul>
+		 <li><a href="#tx1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14.1语法
+	     </a></li>
+	     <li><a href="#tx2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14.2容器的属性
+	     </a></li>
+	     <li><a href="#tx3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14.3项目的属性
+	     </a></li>
+       </ul>  	
+   </li>
+   <li><a href="#transform">&nbsp;&nbsp;15.转换</a>
+       <ul>
+		 <li><a href="#trans1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15.1 2D转换
+	     </a></li>
+	     <li><a href="#trans2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15.2 3D转换
+	     </a></li>
+       </ul>   
+   </li>
+   <li><a href="#transition">&nbsp;&nbsp;16.过渡</a>
+       <ul>
+   	     <li><a href="#tx3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16.1过渡的简写形式
+	     </a></li>
+       </ul>   
+   </li>
+   <li><a href="#keyframes">&nbsp;&nbsp;17.动画</a>
+       <ul>
+   	     <li><a href="#key1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.1动画的简写方式
+	     </a></li>
+   	     <li><a href="#key2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.1动画的其他属性
+	     </a></li>
+   	     <li><a href="#key3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.1动画的兼容性
+	     </a></li>
+       </ul>   
+   </li>
+   <li><a href="#cssyh">&nbsp;&nbsp;18.css优化</a>
+   
+   </li>
+
+</ul>
+<br>
+<pre>
+<div>
+<h3 id="css">1.CSS概述</h3>
+     <span id="css1">1.CSS是什么?</span> 
+         cascading  style   sheets   
+	         层叠   样式     表         简称样式表
+
+     <span id="css2">2.作用</span> 
+         美化html页面
+
+     <span id="css3">3.HTML与CSS的关系</span>
+         html，负责网页的搭建，内容的展示
+         css,负责网页的修饰，样式构建
+             <img src="day08/day08/化妆流程.png" width="400px">
+
+     <span id="css4">4.CSS与HTML的属性，使用原则</span>
+         <span>w3c建议，尽量使用css的方式取代html的属性</span>
+         css的优势：
+             <span>1.样式代码可以高度重用</span>
+             <span>2.样式代码可维护性高</span>
+         <span>CSS hack</span>
+             由于不同的浏览器对css的解析认知不同，会导致同一份css在不同浏览器生成的页面效果不同
+             这种情况，我们开发人员要针对不同的浏览器写不同的css
+             让我们样式可以兼容不同的浏览器，正确显示效果
+             针对不同的浏览器写不同的css的过程，就叫做css hack
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="cssyf">2.CSS的语法规范</h3>
+     <span id="cssfs">1.使用css的方式</span>
+         <span>1.行内样式，内联样式</span>
+             在元素的style属性中，声明样式(所有元素都有style属性)
+             <span id="css211">&lt;any style="样式声明"&gt;&lt;/any&gt;(any:任何元素)</span>
+             样式声明：样式属性:样式值;样式属性:样式值;
+                 样式属性和值用:连接
+                 多个样式声明用;连接
+                 内联样式在项目中基本不用，由于不能重用，默认优先级最高，只有在学习和测试的时候使用
+
+         <span id="css212">2.内部样式</span>
+             在head标签中，写style标签，在style中定义样式规则
+                 <span>&lt;style&gt;
+                      p{color:red;background:pink;font-size:36px;}
+                 &lt;/style&gt;</span>
+             样式规则： 选择器，就是规定页面中哪些元素可以使用此样式
+                 {样式声明}
+             内部样式的重用，只能在当前页面内重用。
+             项目中较少使用，在学习和测试中使用较多
+
+         <span id="css213">3.外联样式</span>
+             单独创建一个.css文件，在这个文件内写样式
+             在.html的head标签中，是link引入此样式
+                 <span>&lt;link rel="stylesheet" href="css的url"&gt;</span>
+             外部样式在项目中应用广泛
+
+         常用样式属性:
+             color:blue;   字体颜色，取值合法的颜色
+             font-size:36px;   字号大小，取值px为单位的数字
+             background:yellow;   背景颜色，取值合法的颜色
+
+<h4 id="csstx">2.CSS的特性</h4>
+     <span id="css221">1.继承性</span>
+         作用在父元素的样式，大部分可以被子元素继承
+
+     <span id="css222">2.层叠性</span>
+         可以为一个元素定义多个样式规则
+         样式规则中的属性不冲突时，可以同时应用这个元素上
+
+     <span id="css223">3.样式的优先级</span>
+         如果样式声明冲突时，按照样式规则的优先级去应用
+         默认的优先级规则，由高到低：
+             1.最高，内联样式
+             2.内部 外部 就近原则
+             3.最低，浏览器默认样式 
+             4.调整优先级
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="xzq">3.基础选择器</h3>
+     <span id="xzqzy">1.选择器的作用</span>
+         规范了页面中哪些元素能够使用定义好的样式
+         选择器就是为了匹配元素(选择器就是一个条件，符合这个条件的元素就可以使用这个样式)
+
+     <span id="xzqxj">2.基础选择器详解</span>
+         <span id="xzq321">1.通用选择器</span> 
+             *{样式声明}
+             *{margin:0;padding:0}  所有元素的内外边距清0
+
+         <span id="xzq322">2.元素选择器，标签选择器</span>
+             页面中所有对应的元素，都应用这个样式
+             设置页面中某种元素的公有默认样式        <span>ex:p{},div{}</span>
+             特殊用法：<span>body{margin:0;padding:0} </span>  body及内部所有元素的内外边距清0
+
+         <span id="xzq323">3.ID选择器，专属定制</span> 
+             只对当前页，一个标签生效
+                 &lt;any id="id值&gt;&lt;/any&gt;
+             #id值{样式声明}
+             一般id选择器在项目中很少单独使用，通常会作为子代选择器或者后代选择器的一部分
+
+         <span id="xzq324">4.类选择器</span> 
+             定义页面上某些元素的公共样式(类选择器，谁想用谁就可以用)
+             通过元素的class属性来引用样式：
+                 &lt;style&gt;
+                     .text-danger{color:red;}
+                 &lt/style&gt;
+                 &lt;p class="text-danger"&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;               
+             1.声明
+                 .类名{样式声明}
+                 点不能省略，类名不能以数字开头，类名只能包含- _
+             2.引用  
+                 &lt;any class="类名"&gt;&lt;/any&gt;
+             3.多类选择器 一个元素可以应用多个类
+                 &lt;any class="类名1  类名2  类名3........"&gt;&lt;/any&gt;
+
+             4.分类选择器
+                 元素.类名{}  
+                     将元素选择器和类选择器一起使用
+                     更精确的确定使用样式的元素
+                     引用了这个类名的此元素才应用这个样式
+                     增加了选择器的权值，提高优先级
+
+         <span id="xzq325">5.群组选择器</span> 
+             将多个选择器使用逗号分隔，放在一起，定义一组公共样式
+                 语法：
+                 选择器1，选择器2，选择器3，.....{}
+                 ex：div,p,#s1,.d2{color:red;background:yellow;}
+
+         <span id="xzq326">6.后代选择器</span> 
+             通过元素的后代关系匹配元素
+             后代，一级或者多级的嵌套关系
+                 语法：
+                 选择器1 选择器2 选择器3.....{样式声明}
+                 存在的意义：更精准的匹配元素 
+
+         <span id="xzq327">7.子代选择器</span> 
+             通过元素的子代关系匹配元素
+             子代，一级嵌套关系
+                 语法：
+                 选择器1>选择器2>选择器3.....{}
+                 存在的意义：更精准的匹配元素
+
+         <span id="xzq328">8.伪类选择器</span> 
+             匹配元素不同状态下的不同样式
+             链接伪类
+                 :link{}匹配元素尚未访问时的状态
+                 :visited{}匹配元素访问过后的状态
+                     ex:
+                         #a1:link{color:pink;background:red;}
+                         a:visited{color:red;background:yellow;}
+
+             动态伪类
+                 :hover{} 鼠标悬停在元素上应用的样式
+                     ex：
+                         img:hover{width:256px;height:50px;}
+                 :active{}匹配元素被激活时的状态(激活：鼠标点住不放开)
+                 :focus 匹配元素获取焦点时的状态
+                     ex:
+                         input:focus{background:yellow;}
+
+             必须按照一定顺序编写，才不会冲突
+             爱恨原则 <span>l</span>o<span>v</span>e <span>h</span><span>a</span>te  
+
+         <span id="xzq329">9.选择器的权值</span> 
+             <span>！important</span>规则
+                 放在属性值之后，与值之间使用空格隔开
+                 作用：
+                     调整样式优先级，优先级提升
+                 多个样式都有！important，按照就近原则应用
+            权值：标识当前选择器的重要程度，权值越大优先级越高
+                  !important      >1000
+                      内联样式        1000
+                      id选择器        100
+                      类选择器        10
+                   元素选择器        1
+                 *通用选择器        0
+                  继承的样式        无
+            权值的特点:
+                 1.当一个选择器中含有多个选择器时，需要将所有的选择器的权值进行相加，然后比较，权值大的优先显示
+                 2.权值相同，使用就近原则
+                 3.群组选择器的权值单独计算，不能相加
+                 4.样式后面加!important，直接获取最高优先级
+                          内联样式不能加!important
+                 5.选择器权值的计算不会超过自己的最大数量级(100个1加一起也不会大于10)
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="ccbk">4.尺寸和边框</h3>
+<h3 id="cc">1.尺寸</h3>	
+     <span id="ccsx">1.尺寸属性</span>
+         作用，改变元素的宽度和高度
+             width: 宽度
+             max-width最大宽度
+             min-width 最小宽度
+             height：高度
+             max-height最大高度
+             min-height最小高度
+
+     <span id="ccys">2.页面中允许设置尺寸的元素</span>
+          <span>1.所有的块级元素都可以设置</span>
+          <span>2.所有行内块元素都可以设置  input（除了单选多选以外）</span>
+          <span>3.本身具备尺寸属性的元素可以设置 img table</span>
+          <span>4.大部分行内元素都不能设置宽高</span>
+
+     <span id="yccl">3.溢出处理</span>
+         当内容较大，元素区域较小的时候，就会发生溢出效果
+         默认都是纵向溢出
+         overflow：
+             visible 溢出部分可见默认值
+             hidden 溢出部分隐藏
+             scroll 显示滚动条，溢出时滚动条可用
+             auto  自动，溢出时有滚动条，不溢出没有
+         overflow-x，设置水平轴的滚动条
+         overflow-y，设置垂直轴的滚动条
+
+     <hr><span id="dw">附加知识点---单位&颜色</span>
+
+         <span>尺寸单位</span>
+             1.px 像素
+             2.in 英寸   1in=2.54cm
+             3.pt 磅值，多用于字体大小  1pt=1/72in
+             4.cm
+             5.mm
+             6.% 相对父级的百分比
+             7.em <span>相对于父级元素样式数据乘以的倍数</span> 1.5em
+             8.rem 相对根元素数据乘以的倍数 boot默认1rem=16px
+
+         <span>合法颜色值</span>
+             1.颜色的英文单词
+             2.#rrggbb  6个16进制的数字     ff 为255
+             3.#aabbcc简写成#abc  #f00 #0f0 #00f #ff0 #f0f #0ff
+             4.rgb(0~255,0~255,0~255);  rgb(100,12,23);
+             5.rgb(0%,10%,50%); 可以使用，但是项目不用
+             6.rgba(0~255, 0~255, 0~255,0~1) 1不透明，0全透明
+
+         <span>项目中，写样式的思路
+             从上往下写，从外往里写，从左往右写
+                 1.尺寸，大体位置
+                 2.边框，背景色
+                 3.文本样式
+                 4.微调</span>
+
+<hr><h3 id="bk">2.边框</h3>	
+     <span id="bkjx">1.边框的简写方式</span>
+         border:width style color；
+         width  边框的宽度，以px为单位的数字
+         style  边框的样式 
+                 solid 实线
+                 dotted 点点虚线
+                 dashed 短线虚线
+                 double 双实线
+         color  边框的颜色
+                 合法的颜色，transparent透明
+         边框的简写方式，会同时设置4个方向的边框
+     <span id="bkdb">2.边框的单边设置</span>
+         border-top:10px solid #aaa;
+         border-right:10px solid transparent;
+         border-bottom:10px solid transparent;
+         border-left:10px solid transparent;
+     边框的单属性设置
+         使用单属性设置，必须保证边框有style属性
+         border-style:solid;
+         border-width:3px;
+         border-color:#f0f;
+     单边单属性
+         border-方向-属性,一共12个  
+             border-top-width
+             border-top-style
+             border-top-color
+             border-right-width
+             border-right-style
+             border-right-color
+             border-bottom-width
+             border-bottom-style
+             border-bottom-color
+             border-left-width
+             border-left-style
+             border-left-color
+
+     <span id="bkdj">3.边框的倒角(圆角)</span>
+         border-radius：圆角的半径
+             取值：以px为单位的数字
+                     %   50%就是一个圆
+         单角设置，需要两个方向的边，才能确定一个角
+         先写上下，再写左右
+             border-top-left-radius:
+             border-top-right-radius:
+             border-bottom-left-radius:
+             border-bottom-right-radius:
+
+     <span id="bkyy">4.边框的阴影</span>
+         box-shadow:h-shadow v-shadow blur spread color inset;
+             h-shadow:水平方向偏移量
+             v-shadow:垂直方向偏移量
+             blur：阴影的模糊距离，数值越大，越模糊
+             spread：阴影的尺寸
+             color：阴影的颜色
+             inset:把向外的阴影，变成向内的阴影
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="kmx">5.框模型、内外边距</h3>
+     <span id="kmx">1.框模型--盒子模型</span>
+         框模型--元素在页面上实际占地空间的计算方式
+         浏览器默认的元素实际占地宽度
+             左外边距+左边框+左内边距+内容区域宽度+右内边距+右边框+右外边距
+         浏览器默认的元素实际占地高度
+             上外边距+上边框+上内边距+内容区域高度+下内边距+下边框+下外边距
+         外边距margin:边框以外的距离(元素与元素之间的距离)
+         内边距padding：边框与内容之间的距离
+
+     <span id="margin">2.外边距margin </span>
+         <span>改变外边距，元素有位移效果</span>
+         语法:
+             margin：v1; 设置4个方向的外边距
+             margin-top
+             margin-right
+             margin-bottom
+             margin-left
+         取值：
+             1.以px为单位的数字
+             2.%
+             3.取负数，margin-left,正值往右，负值往左
+                             margin-top,正值往下，负值往上
+             4.auto  自动计算块级元素的外边距。
+                         让块级元素在水平居中对齐。
+                         auto对上下外边距无效
+                         auto只对设置了宽度的块级元素有效
+         简写方式:
+             margin:v1;设置4个方向外边距
+             margin:v1 v2;   v1:上下，v2:左右
+             margin:0 auto;   margin:auto;
+             margin:v1 v2 v3;  v1:上   v2:左右  v3:下
+             margin:v1 v2 v3 v4;  上右下左 顺时针
+
+         <span>外边距的特殊效果:</span>
+         1.外边距的合并
+             两个垂直外边距相遇时，他们将合并成一个
+             值以大的为准
+         2.关于块级元素，行内元素，行内块的总结
+         行内元素的特点：
+                 设置宽高无效，宽高根据内容自动撑开。
+                 上下垂直外边距无效，可以与其他行内元素或者行内块共用一行
+         块级元素的特点：
+                 设置宽高有效，如果不设置宽，宽度是父元素的100%。
+                 如果不设置高，高度按照内容自动撑开。
+                 上下外边距有效，独占一行。
+         行内块的特点   input（除了单选和多选）
+                 设置宽高有效，不设置宽高，自带一个默认的宽高。
+                 上下外边距有效。但是同一行修改一个行内块的垂直外边距，整行都会一起位置改变。
+                 可以与其他行内元素和行内块共用一行
+
+         <span>自带外边距的元素:</span>
+             h1~h6,p,body,ol,ul,dl,pre
+             由于不同浏览器对默认外边距的解析可能会有差别
+             所以开发之前，一般会把内外边距清空
+                 *{margin:0;padding:0}
+                 blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,
+                 h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}
+
+         <span>外边距溢出:</span>
+             在特殊的情况下，为子元素设置上外边距，会作用到父元素
+             特殊情况：
+                 1.父元素没有上边框
+                 2.子元素的内容区域上边与父元素内容区域上边重合
+                  （为第一个子元素设置上外边距时，这种说法不严谨）
+             解决方案：
+                 1.给父元素添加上边框
+                   弊端，影响父元素实际占地高度
+                 2.给父元素添加上内边距
+                   弊端，影响父元素实际占地高度
+                 3.在父元素的第一个子元素的位置处，
+                   添加一个空的&lt;table&gt;&lt;/table&gt;
+
+     <span id="padding">3.内边距padding</span>
+         改变内边距的效果，感觉是改变了元素大小
+         不会影响其他元素，但是会改变元素自己占地尺寸，感觉上改变了元素本身的大小
+         语法：
+             padding
+             padding:v1;设置4个方向的内边距
+             padding-top
+             padding-right
+             padding-bottom
+             padding-left
+        取值：
+             以px为单位的数字
+             %
+         简写方式:
+             padding:v1;设置4个方向
+             padding:v1 v2; v1:上下，v2：左右。padding没有auto
+             padding:v1 v2 v3; v1:上，v2：左右，v3：下
+             padding：v1 v2 v3 v4；上右下左
+
+
+     <span id="box-sizing">4.box-sizing属性</span>
+         box-sizing  浏览器默认元素框模型
+         取值：
+             box-sizing: content-box; 默认值 
+                 设置元素占地尺寸的计算方式
+                 设置的width和height，只是在设置内容区域
+                 元素的实际占地宽度：左外边距+左边框+左内边距+内容区域宽度+右内边距+右边框+右外边距       
+             border-box
+                 设置的width和height,是边框内部的部分(包含边框)
+                 元素实际占地宽度：左外边距+设置的width+右外边距
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="bg">背景</h3>
+     <span id="bgjx">简写方式</span>
+         在一个属性中指定背景的多个属性值
+             属性：background
+             取值：color url() repeat attachment position;
+             最精简的写法  backgrond:color/image
+
+     背景颜色：background-color:#f00;
+     背景图片：background-image:url(资源路径)
+         使用背景图片，可以让元素内部的子元素，堆叠显示在背景图上
+         而img标签，默认不可以堆叠显示
+         背景图片的平铺：background-repeat:
+         取值：
+             repeat,默认值，平铺
+             no-repeat,不平铺，背景图只显示一次
+             repeat-x 在水平方向平铺
+             repeat-y 在垂直方向平铺
+     背景图片的定位：background-position:
+         取值：
+             1x y      以为单位的数字，定义横向位置和纵向位置
+             2.x% y%    0% 0% 左上  50% 50% 中间
+             3.关键字   x:left/center/right  y:top/center/bottom              
+	 背景图片的尺寸：background-size
+         取值：
+             1.x y 以px为单位的数字，设置具体宽高
+             2.x% y%按父元素宽高%比设置
+             3.cover，填充，覆盖。让背景图充满整个容器，哪怕图片显示不全，也没关系
+             4.contain，包含。让容器可以包含整张图片，图片是显示完整的。容器有空白区域，没关系。
+     背景图片的固定：background-attachment:
+         取值：
+             scroll,默认值，背景图会随窗口滚动条滚动
+             fixed 背景图相对于窗口固定，窗口滚动时，背景图位置不变，但是只会在原容器内显示
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>	
+<h3 id="jb">渐变gradient</h3>
+     什么是渐变
+         渐变是指多种颜色，平缓变化的一种显示效果
+     渐变的主要因素
+         色标：一种颜色，及其出现的位置
+         一个渐变，至少有两个色标
+     渐变分类
+         1.线性渐变，以直线的方式来填充渐变色
+         2.径向渐变，以圆形的方式来填充渐变色
+         3.重复渐变，将线性、径向渐变重复几次实现
+     <span id="jb1">1.线性渐变:</span>
+          background-image:linear-gradient(angle,color-point1, color-point2,.........);
+         angle:表示渐变的方向，角度
+         取值:  
+             1. to top  从下往上  关键字 
+                 to right  从左往右
+                 to bottom  从上往下
+                 to left  从右往左
+             2.角度值  
+                 0deg  to top  从下往上
+                 45deg
+                 90deg   to right从左往右
+                 180deg  to bottom  从上往下
+                 270deg  to left  从右往左 
+             color-point:色标
+                 取值：颜色+以px为单位的数字  |&|&|  颜色+%
+                     
+     <span id="jb2">2.径向渐变</span>
+         background-image:radial-gradient(半径 at 圆心x 圆心y，color-point1,color-point2,.........)
+             半径:px为单位的数字，色标中写具体值半径无效，只有色标中使用%，半径才有效
+             圆心x 圆心y：圆心所在的位置
+            取值:
+                 1. x y 以px为单位的数字
+                 2.x% y%  
+                 3.关键字  x  left/center/right
+                           y top/center/bottom
+
+     <span id="jb3">3.重复渐变</span>
+         重复线性渐变
+         background-image:repeating-linear-gradient(to bottom,#000 0px,#ff0 25px, #000 50px);
+         重复径向渐变 
+         background-image:repeating-radial-gradient(50px at center center,#000 0px,#0ff 10px,#000 20px,#ff0 25px,#000 30px,#0ff 40px,#000 50px);
+
+     <span id="jb4">4.浏览器兼容问题(ie8.0以下不考虑)</span>
+         渐变属性，支持低版本浏览器的编写方法
+         chrome/safari    -webkit-
+         firefox           -moz-
+         IE               -ms-
+         opera           -o-
+             background:-webkit-linear-gradient(top,color-point1,color-point2,.....);
+         有前缀的方向，直接使用top/right/bottom/left 从哪里开始
+         没有前缀，要使用to top/to right/to bottom/to left 向哪个方向
+
+</div>
+ <hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="txt">文本格式化</h3>
+     <span id="txt1">1.字体属性</span>
+         1.指定字号大小
+             font-size
+             取值: 
+                 px/pt为单位的数字    
+                 rem/em    
+         2.设置字体的类型
+             font-family
+             取值：
+                 pc中字体库里有的字体，如果有空格，用""
+                 用逗号隔开多个字体类型
+                 font-family:黑体,"mv boli","chiller"；
+         3.字体加粗
+             font-weight
+             取值：
+                 关键字   bold   normal  lighter  bolder
+                 无单位数字，100的整倍数，不能超过1000
+         4.字体样式
+             font-style
+             取值：
+                 italic 斜体
+                 normal 正常
+         5.小型大写字母
+             font-variant:small-caps;
+
+         6.字体属性简写方式
+             <span>font:style variant weight size famliy;</span>
+             最精简的写法font:size family;
+
+     <span id="txt2">2.文本属性</span>
+         1.字体颜色
+             color:
+             取值：合法的颜色值
+         2.文本对齐方式
+             text-align
+             设置文本在水平方向的对齐方式(内部对行内，行内块，文本有效，对内部的块级元素无效)
+             取值：left/center/right/justify 两端对齐
+         3.行高
+             定义一行数据的高度
+             特性：如果行高的高度大于字体本身的大小时
+             那么该行文本将在指定的行高内，呈垂直居中的方式显示
+             取值：
+                 1.以px为单位的数字，一般，行高的值与容器的高度值相同。
+                 2.无单位的数字(整数和小数都可以)，行高为字号大小的倍数
+             文字有多行，不建议使用行高，文字会溢出
+         4.文本线条修饰
+             text-decoration
+             取值：
+                 overline 上划线
+                 underline 下划线
+                 line-through 删除线
+                 none 去除所有线条修饰（a标签去掉下划线）
+         5.首行缩进
+             text-indent
+             取值，以px为单位的数字
+         6.文本阴影
+             text-shadow:h-shadow v-shadow blur color;
+                   h-shadow:水平方向偏移量
+                   v-shadow：垂直方向偏移量
+                   blur：模糊度
+                   color：阴影的颜色
+
+</div>
+ <hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="table">表格</h3>
+     <span id="table1">1.表格的常用属性</span>
+         1.table的样式  之前学习的属性，基本都可以用
+             尺寸，边框，背景，字体，文本，内外边距
+             table设置边框，只设置最外面的大边框
+         2.td/th的样式
+             尺寸，边框，背景，字体，文本，内边距
+             外边距无效
+         vertical-align：指定单元格数据的垂直对齐方式
+             取值：top/middle/bottom
+
+         table特殊的表现方式:
+             table是一种特殊的表现方式
+             实际尺寸是根据内容数据多少决定的
+             单元格小，内容多，那么自动撑开
+             内容少，单元格就按尺寸展示
+             table在浏览器的渲染方式
+
+     <span id="table2">2.表格的特有属性</span>
+         1.边框合并
+             border-collapse:
+             取值：
+                 separate 默认值，边框分离模式
+                 collapse 边框合并
+         2.边框边距
+             border-spacing:
+             取值：
+                 1.只有一个值，同时设置水平和垂直边框边距
+                 2.两个值，第一个设置水平，第二个设置垂直
+             注意：如果边框是合并状态，此属性无效
+             必须保证border-collapse:separate
+         3.标题位置
+             caption-side
+             取值：top bottom
+         4.设置表格显示规则
+             用来帮助浏览器如果布局一张表格
+             table-layout
+             取值：
+                 1.auto 默认值，自动布局表格
+                     列的尺寸实际上由内容决定，内容比尺寸大，按内容显示，内容比尺寸小，按尺寸显示
+                 2.fixed 固定表格布局，列的尺寸以设置的为准
+
+     自动布局和固定布局的对比:
+         自动布局	                           
+              单元格的大小会自动适应内容
+              表格复杂时，加载速度较慢	
+              自动布局比较灵活（优点）	
+              适用于不确定每列大小的，并且不复杂的表格	
+         固定布局
+              单元格大小取决于设置的值
+              任何情况下，都会加速加载表格（优点）
+              固定表格布局不够灵活
+              适用于确定每列的尺寸的表格
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>	
+<h3 id="position">定位</h3>
+     1.什么是定位
+         改变元素在页面中的位置
+     2.分类
+         1.普通流定位
+         2.浮动定位
+         3.相对定位
+         4.绝对定位
+         5.固定定位
+
+     <span id="pos1">普通流定位（默认文档流）</span>
+         1.每个元素在页面上都有自己的空间
+         2.每个元素都是从父元素的左上角开始显示
+         3.块级元素按照从上到下的方式逐个排列，每个元素单独成行
+         4.行内元素是多个元素在一行中显示，从左往右逐个排列
+
+     <span id="pos2">浮动定位</span>
+         让块级元素横向显示
+             float：
+             取值：
+                 1.left左浮动，让元素浮动后停靠父元素的左边，或者挨着左侧已浮动元素
+                 2.right右浮动，让元素浮动后停靠父元素的右边，或者挨着右侧已浮动元素
+                 3.none 默认值，无任何浮动
+             浮动的特点
+                 1.元素一旦浮动，脱离文档流(不占页面空间，后面未浮动元素上前补位)
+                 2.浮动元素会停靠在父元素的左边/右边，或者其它已浮动元素的边缘
+                 3.父元素横向显示不下所有浮动元素时，最后显示不下的部分会自动换行
+                 4.浮动解决多个块级元素在同一行显示的问题
+                 5.浮动引发的特殊情况
+                     1.浮动元素占位的问题
+                         当父元素显示不下所有浮动元素时，最后的元素会换行
+                         但是，已浮动元素会根据自己的浮动方向占据位置。导致被挤下去的浮动元素，需要在更下方显示
+                     2.元素一旦浮动，如果元素未定义宽度，那么元素的宽度将以内容为准
+                     3.元素一旦浮动，都会变为块级元素，允许设置尺寸，可以设置垂直外边距
+                     4.文本，行内元素，行内块，是不会被浮动元素压在下面的，而是，巧妙的避开，环绕着浮动元素显示
+                 6.清除浮动
+                     元素一旦浮动，会对后续元素带来影响，后续元素会上前补位
+                     如果后续元素不想上前补位，那么可以给后续元素设置清除浮动
+                     clear:
+                         取值：
+                             left 清除左浮动的影响
+                             right 清除右浮动的影响
+                             none 不清除
+                             both 清除左和右浮动的影响
+                 7.高度坍塌
+                     块级元素的高度，如果不设置，默认高度是靠内容撑起来的
+                     块级元素内部，所有元素如果都浮动，块级元素认为自己内部没有元素，所有撑不起来。发生了高度坍塌
+                 解决方案：
+                     1.为父元素设置高度，弊端：不是每次都知道高是多少
+                     2.为父元素设置浮动
+
+     定位---相对、绝对、固定定位
+     position:
+     取值：
+         static 默认，静态（默认文档流定位）
+         relative 相对定位
+         absolute 绝对定位
+         fixed    固定定位
+         当一个元素被position修饰，并且取值为relative/absolute/fixed其中一种时，那么这个元素被称为已定位元素，定位要配合偏移属性使用
+         当一个元素有position属性，并取值为relative/absolute/fixed
+         那么这个元素就解锁4个偏移属性，元素距离(方向)有多少px
+             top: +往下   -往上
+             right: +往左  -往右
+             bottom: +往上  -往下
+             left:+往右 -往左
+
+     <span id="pos3">相对定位</span>
+         相对谁定位，相对自己原来位置偏移某个距离
+         position:relative;  配合4个偏移属性使用            
+             特点：
+                 1.不脱离文档流
+                 2.相对定位，如果不写偏移量，效果与没写定位是一样的。不影响任何布局(为了绝对定位做准备)
+             使用场合：
+                 1.自身元素位置的微调
+                 2.作为绝对定位子元素的已定位祖先级元素
+
+     <span id="pos4">绝对定位</span>
+         position:absolute；配合偏移属性应用
+             特点：
+                 1.绝对定位的元素会相对于，离自己"最近的""已定位的""祖先元素"，去实现位置的初始化
+                 如果没有已定位的祖先元素，相对于body去实现位置的初始化
+                 2.绝对定位，是脱离文档流的，不占据页面空间，后面元素会上前补位。
+                 3.绝对定位的元素，会变成块级元素
+
+     <span id="pos5">固定定位</span>
+         position:fixed；  配合偏移量使用
+             将元素固定在页面上的某个位置，不会随着滚动条发生位置变化，一致固定在可视区域
+             特点：
+                 脱离文档流，位置相对于body初始化
+                 元素不占页面空间
+                 后续元素上前补位
+                 元素变为块级
+
+     堆叠顺序
+         1.定位的脱离文档流和浮动的脱离文档流不是一个体系
+         2.默认，后定位的元素，堆叠顺序高
+         3.设置堆叠顺序
+           z-index:无单位数字 
+         4.堆叠顺序对父子级无效，儿子永远在父亲的上面
+         5.只有已定位元素，有堆叠顺序
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="display">显示</h3>
+     <span id="dis1">一.显示方式</span>
+         决定元素在网页中的表现形式
+         块级，行内，行内块，table
+         语法
+         display:
+             取值：
+             1.block 让元素的表现和块级元素一致
+             2.none 不显示元素，隐藏
+             3.inline 让元素的表现和行内一致
+             4.inline-block 让元素的表现和行内块一致
+             5.table 让元素的表现和table一致
+         块级元素：独占一行，可以设置尺寸，上下外边距生效
+         行内元素：共用一行，设置尺寸无效，上下外边距无效
+         行内块：共用一行，设置尺寸有效，上下外边距有效
+          table：独占一行，允许设置尺寸，尺寸以内容为准
+
+     <span id="dis2">二.显示效果</span>
+         visibility
+         取值：
+         1.visible 默认值，可见的
+         2.hidden 隐藏，不可见
+
+     Q：display: none和visibility:hidden的区别
+         display: none，隐藏，元素脱离文档流，本身不占据页面空间，后面元素会上来补位
+         visibility:hidden，隐藏，元素不脱离文档流，在页面不可见，但是占据位置
+
+     <span id="dis3">三.透明度</span>
+         opacity
+             取值 0~1 值越小越透明
+     Q: opacity和rgba的区别
+         rgba只会改变当前的透明度
+         opacity，元素内部只要跟元素相关的颜色都会跟着改变透明
+
+     <span id="dis4">四.垂直对齐方式</span>
+         vertical-align
+             使用场合：
+             1.表格中 table/td
+                 取值：top/middle/bottom
+             2.图片与文字的排版 img
+                 控制图片与两边文字的垂直对齐方式
+                 取值：top/middle/bottom/baseline(基线，默认值)
+                 通常会将所有的图片垂直对齐方式，更改为非基线以外的方式
+     <span id="dis5">五.光标的设置</span>
+         cursor
+             取值：
+                 1.default 箭头
+                 2.pointer 小手
+                 3.crosshair  +
+                 4.text  
+                 5.wait  等待
+                 6.help  帮助
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="list">列表的样式</h3>
+     简写方式 
+	 <span>list-style:type image position;</span>
+         最常用的写法 list-style:none;  去掉列表项
+
+     1.列表项标识   list-style-type:
+         取值: 1.none / 2.disc / 3.circle / 4.square 
+		 
+     2.列表项图像   list-style-image:url(路径);
+	 
+     3.列表项的位置  list-style-position:inside/outside(默认值);
+         设置列表项在li的外部还内部
+             
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="core">CSS3 CORE 复杂选择器</h3>
+     <span id="cor1">1.兄弟选择器</span>
+         兄弟元素:
+             具备相同父级元素的平级元素之间称为兄弟元素
+             兄弟选择器只能往后找，不能往前找
+
+         相邻兄弟选择器
+             获取紧紧挨在某元素后面的兄弟元素
+             选择器1+选择器2{}
+
+         通用兄弟选择器
+             获取元素后所有满足条件的兄弟元素
+             选择器1~选择器2{}
+
+     <span id="cor2">2.属性选择器</span>
+         id class name type value style title
+             允许通过元素所附带的属性及其值来匹配页面元素，很精准
+         1.[attr]  attr表示任意属性
+             作用：匹配页面中所有带attr属性的元素  
+                         [id]{}   [class]{}
+         2.elem[attr]
+             作用：匹配页面中所有带有attr属性的elem元素
+                         div[id]{}
+         3.elem[attr1][attr2]...
+             作用：匹配页面中所有带有attr1和attr2属性的元素
+                         p[title][id]{} 
+         4.[attr=value]
+             作用：匹配页面中所有带有attr属性并且值为value的元素
+
+         5.模糊属性值
+             [attr^=value] 匹配属性值以value开头的元素
+             [attr$=value] 匹配属性值以value结尾的元素
+             [attr*=value] 匹配属性值中，有value的元素
+             [attr~=value] 匹配属性值中，有value这个独立单词的元素
+
+     <span id="cor3">3.伪类选择器</span>
+         已经学过的伪类
+         :link :visited :hover :active :focus
+         1.目标伪类
+            让被激活锚点，应用样式
+            选择器:target{}
+
+         2.结构伪类
+             1.:first-child
+                 匹配的元素是属于其父元素的第一个子元素
+             2.:last-child
+                 匹配的元素是属于其父元素的最后一个子元素
+             3. :nth-child(n)
+                 匹配的元素是属于其父元素的第n个子元素，n从1开始
+             4.:empty
+                 匹配内部没有任何元素的标签(匹配没有子元素的元素)
+                 注意：内部不许有空格，文字，元素
+             5.:only-child
+                 匹配属于其父元素的唯一子元素
+
+         3.否定伪类
+             :not(selector)
+                 将满足selector条件的元素排除在外
+
+         4.伪元素选择器
+             1. :first-letter 或  ::first-letter
+                 匹配元素的首字符
+
+             2. :first-line   或    ::first-line
+                 匹配元素的首行
+                 首字符和首行发生冲突时，使用首字符样式
+
+             3. ::selection   必须是两个：
+                 匹配用户选取内容的样式
+                 注意：只能修改文本颜色，背景颜色
+
+             4.伪元素选择器，内容生成
+                 使用 css命令，添加的html元素，称之为伪元素
+
+                 ::before  或者  :before
+                     匹配到某元素的内容区域之前的部分
+                     添加一个假的元素，元素内容使用content属性
+                     元素的显示方式使用display控制
+                     注意：content中只能添加文本或者url(图片)
+
+                 ::after  或者   :after
+                     匹配到某元素的内容区域之后的部分
+                     伪元素添加内容，可以解决的问题:
+                         1.外边距溢出，解决方案，在父元素的第一个子元素位置处添加空&lt;table&gt;&lt;/table&gt;
+                             #parent::before{
+                                     content:"";
+                                     /*这里的table不是指table标签*/
+                                     /*指的table这种显示方式*/
+                                     display:table;
+                                 } 
+                         2.解决高度坍塌，在父元素中追加一个空的块级元素，并给这个元素设置clear:both;
+                             #parent:after{
+                                     content:"";
+                                     display:block;
+                                     clear:both;
+                                 }
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>	
+<h3 id="tx">弹性布局</h3>
+     什么是弹性布局
+         弹性布局，是一种布局方式
+         主要解决某个元素中子元素的布局方式
+         为布局提供了很大的灵活性
+
+     弹性布局的相关概念
+         容器
+             要发生弹性布局的子元素的父元素称为容器
+             就是设置display:flex那个元素
+         项目
+             要做弹性布局的子元素们，称之为项目
+             就是设置了display:flex那个元素的，子元素们
+         主轴
+             项目们排列方向的一条轴，称之为主轴
+             如果项目们是按照横向排列，那x轴就是主轴
+             如果项目们是按照纵向排列，那么y轴就是主轴
+             项目们排列顺序，主轴的起点和终点
+         交叉轴
+             与主轴垂直相交一条轴，叫做交叉轴
+             项目们在交叉轴上的对齐方式，是交叉轴的起点和终点
+
+     <span id="tx1">语法</span>
+         将元素设置成弹性容器之后，他所有的子元素将变为弹性项目
+         都允许按照弹性布局的方式排列
+             属性： display:
+             取值：
+                 1.flex 将块级元素设置为容器
+                 2.inline-flex 将行内元素变为容器
+             特点:
+                 1.元素设置为flex容器之后，项目的float/clear/vertical-align/text-align属性失效
+                 2.项目可以修改尺寸
+
+     <span id="tx2">容器的属性</span>
+         1.主轴的方向
+             flex-direction:
+                 取值：
+                 row，默认值，主轴是x轴，主轴起点是左端
+                 row-reverse,  主轴是x轴，主轴起点是右端
+                 column，主轴是y轴，主轴起点在顶部
+                 column-reverse,主轴是y轴，主轴起点在底部
+         2.设置项目换行
+             flex-wrap:
+                 取值：
+                 1.nowrap 默认值，空间不够时，也不换行，项目自动缩小
+                 2.wrap 空间不够就换行
+                 3. wrap-reverse 换行，并反转
+         3.上面两个属性的缩写
+             flex-direction和flex-wrap的缩写
+             flex-flow:
+                 取值： direction  wrap；
+         4.定义项目在主轴上的对齐方式
+             justify-content:
+                 取值：
+                 1.flex-start,默认值，以主轴起点对齐
+                 2.flex-end，以主轴终点对齐
+                 3.center  在主轴上居中对齐
+                 4. space-between两端对齐，两端无空白
+                 5.space-around 每个间距大小相同
+         5.项目在交叉轴对齐
+             align-items:
+                 取值:
+                 1.flex-start 交叉轴起点对齐
+                 2.flex-end 交叉轴终点对齐
+                 3.center; 交叉轴居中对齐
+                 4.baseline 交叉轴基线对齐，就是交叉轴起点
+                 5.stretch 前提，项目不写高。占满交叉轴上所有的空间
+
+     <span id="tx3">项目的属性</span>
+         只能设置在某一个项目上，不影响其他项目和容器的效果
+         1.order
+             定义项目排列顺序，值越小，越靠近起点，默认值为0
+             取值：无单位的整数
+         2.flex-grow
+             定义项目的放大比例
+             如果容器有足够大的剩余空间，项目将按比例放大
+             取值：无单位整数，默认值0，不放大
+         3.flex-shrink
+             定义项目缩小的比例，容器空间不足时，项目该如何缩小
+             取值：无单位整数，默认值为1。
+                  取值为0，不缩小。取值越大，缩小越快。
+         4.align-self
+             定义当前项目在交叉轴上的对齐方式
+             取值 :
+                 1.flex-start 交叉轴起点对齐
+                 2.flex-end 交叉轴终点对齐
+                 3.center; 交叉轴居中对齐
+                 4.baseline 交叉轴基线对齐，就是交叉轴起点
+                 5.stretch 前提，项目不写高。占满交叉轴上所有的空间
+                 6.auto 使用容器定义的align-items的值
+
+</div>	
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="transform">转换</h3>
+     什么是转换
+         改变元素在页面中的位置，大小，角度，以及形状
+         2D转换，只在X轴和Y轴上发生转换效果
+         3D转换，增加了Z轴的转换效果
+     转换属性
+         transform:
+             取值：
+             1.none 默认值，无任何转换效果  
+             2.transform-function
+                 表示1个或者多个转换函数。
+                 如果是多个转换函数，中间用空格分开
+     转换原点
+         transform-origin:
+             取值：
+                 以px为单位数字
+                  %
+                 关键字x(left/center/right) y(top/center/bottom)
+             取值的个数
+                 2个值，表示原点在x轴和y轴上的位置
+                 3个值，表示原点在x轴，y轴和z轴上的位置
+                 默认值：原点在元素的中心位置(center center)
+     总结：学习转换，就是学习transform：后面的转换函数
+
+     <span id="trans1">2D转换</span>
+         1.位移(改变元素的位置)
+             转换函数：translate()
+                 取值：
+                     1. translate(x)指定元素在x轴上的位移距离
+                         + 元素往右    -  元素往左
+                     2. translate(x，y)指定元素在x轴和y轴上的位移距离
+                         x：+ 元素往右    -  元素往左
+                         y: + 元素往下    - 元素往上
+                     3. translateX (x); 指定元素在x轴上的位移距离
+                     4. translateY (y);指定元素在y轴上的位移距离
+
+         2.缩放，改变元素的大小
+             scale(value)
+                 取值：
+                 1.取一个值
+                     value&gt;1         x轴和y轴都放大
+                     0&lt;value&lt;1    x轴和y轴都缩小
+                     -1&lt;value&lt;0   x轴和y轴都翻转180度，并缩小
+                     value&lt;-1       x轴和y轴都翻转180度,并放大
+                 2.取两个值
+                     scale(x,y)  x设置x轴的比例，y设置y轴的比例
+                 3. scaleX (x) 单独设置x轴
+                 4. scaleY (y) 单独设置y轴
+
+         3.旋转，改变元素的角度
+             rotate(ndeg)
+                 n:+ 顺时针  - 逆时针
+                     坑：d1 先旋转45deg 再位移200px
+                         d2 先位移200px 再旋转45deg
+                         不要写在hover中
+                     注意：
+                         1.旋转原点会影响旋转效果
+                         2.旋转是连同坐标轴一起旋转的，会影响旋转之后的位移方向
+         4.倾斜
+             1.skew(x)等同于skewX(x)
+                 让元素向着x轴发生倾斜，实际上改变的是y轴的角度
+                 x取正值  y轴逆时针
+                 x取负值  y轴顺时针
+             2.skewY(y) 
+                 让元素向着y轴发生倾斜，实际上改变的是x轴的角度
+                 y取正值  x轴顺时针
+                 y取负值  x轴逆时针
+             3.skew(x,y)
+
+     <span id="trans2">3D转换</span>
+         3D转换是模拟的
+         1.透视距离
+             模拟人的眼睛到3D转换的元素之间的距离，距离不同，看到的效果不同
+         perspective:距离;  此属性要加载3D转换元素的父元素上
+
+         2.3d旋转
+         transform:
+             取值:
+                 1.rotateX(xdeg)
+                     以x轴为中心轴，旋转元素的角度（老式爆米花机，烤羊腿）
+                 2. rotateY(ydeg)
+                     以y轴为中心轴，旋转元素的角度(旋转木马，旋转门)
+                 3. rotateZ(zdeg)
+                     以z轴为中心轴，旋转元素的角度(电风扇，摩天轮)
+                 4. rotate3D(x,y,z,ndeg);
+                     x，y，z取值为0，代表不参与旋转
+                     取值>0 表示该轴参与旋转
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="transition">过渡</h3>
+     什么是过渡
+         让css的值，在一段时间内平缓变化的效果
+
+     语法:
+         1.指定过渡属性  <span>transition-property:</span>
+             取值：
+                 直接写css属性值，多个属性值之间有空格分开
+                 all  所有支持过渡的属性，都参与此次过渡效果
+             支持过渡的属性
+                 1.颜色属性
+                 2.大多数取值为具体数字的属性
+                 3.阴影
+                 4.转换
+                 5.visibility
+
+         2.指定过渡时长  <span>transition-duration:</span>	      
+             指定多长时间完成此次过渡操作
+             取值:  s/ms为单位的数字   1s=1000ms
+
+         3.过渡的时间曲线函数  <span>transition-timing-function:</span>       
+             取值:
+                 ease，默认值，慢速开始，中间变快，慢速结束
+                 linear 匀速
+                 ease-in 慢慢开始，加速结束
+                 ease-out 快速开始，慢速结束
+                 ease-in-out 慢速开始，慢速结束，中间先加速再减速
+
+         4.过渡的延迟时间  <span>transition-delay:</span>         
+             取值: s/ms为单位的数字
+
+     <span id="trans3">过渡的简写形式</span>
+             <span>transition：property duration timing-function delay;</span>
+             最简方式 <span>transition:duration;</span>
+
+    过渡代码编写的位置
+             写在原来的选择器中，过渡效果有去有回
+             写在hover中，过渡效果有去无回
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="keyframes">动画</h3>
+     什么是动画
+         使元素从一种样式逐渐变为另一种样式
+         其实就是将多个过渡效果放到一起
+     使用关键帧，来控制动画的每一个状态
+         关键帧
+             1.动画执行的时间点
+             2.在这个时间点上的样式
+             3.动画的使用步骤
+
+     <span id="key1">动画的简写方式</span>
+         animation:<span>name duration timing-function delay count direction;</span>
+         最简写方式 animation:<span>name duration;</span>	
+
+     1.使用关键帧声明动画
+         @keyframes 动画名称{
+             0%{动画开始时的样式}
+             ....
+             100%{动画结束时的样式}
+          }
+     2.调用动画
+         1.选中你要使用的动画名称
+             <span>animation-name:change;</span>
+         2.设置动画的执行时间
+             <span>animation-duration:10s;</span>
+         3.设置动画的时间曲线函数
+             <span>animation-timing-function</span>
+         4.设置动画的延迟时间
+             <span>animation-delay</span>
+
+     <span id="key2">动画的其他属性</span>
+         <span>animation-iteration-count:</span>
+             指定动画的播放次数
+                 取值：
+                     1.具体次数，数字
+                     2.infinite 无限次播放
+         <span>animation-direction:</span>
+                 指定关键帧的播放顺序
+                 取值：
+                     1.normal 默认值，0%~100%
+                     2.reverse 100%~0%
+                     3.alternate 轮流播放
+                     奇数次正着播放，偶数次反着播放
+
+         <span>animation-fill-mode:</span>
+             设置动画在播放前和播放后的显示状态
+             动画在延时的时间内，和播放完成之后的时间，是不显示的
+             取值:
+                 1.backwards;   动画播放之前的延迟时间内，动画保持在第一帧上
+                 2. forwards；  动画播放完成，将保持在最后一帧的状态
+                 3.both    是backwards和forwards的结合体
+                 4.none   默认值，不填充
+				 
+         <span>animation-play-state:</span>
+             指定动画是处于播放还是暂停的状态上        
+             取值：1.paused 暂停 / 2.running 播放
+  
+     <span id="key3">动画的兼容性</span>
+         如果要兼容低版本浏览，需要在动画声明的时候加前缀
+             @keyframes 动画名称{}
+             @-webkit-keyframes 动画名称{}
+             @-ms-keyframes 动画名称{}
+             @-o-keyframes 动画名称{}
+             @-moz-keyframes 动画名称{}
+
+</div>
+<hr><div align="center"><a href="#">回到顶部</a></div><hr>
+<div>
+<h3 id="cssyh">css优化</h3>
+     css优化目的
+         1.减少服务器端压力
+         2.提升用户体验
+             1.CSS优化的原则
+                 尽量的减少http的请求个数
+                 页面的顶部，引入css文件
+                 将css和js文件放到外部的独立文件中
+             2.CSS代码优化
+                 合并样式(能写群组,就不单写,能用简写方式,就不单独定义属性）
+                 缩小样式文件的大小(能重用就重用)
+                 减少样式重写
+                 避免出现空的href和src
+                 选择更优的样式属性值
+                 代码压缩
+
+</div>
+</pre>
+<hr><div align="center"><a id="db" href="#">回到顶部</a></div><hr>
+</body>
+</html>

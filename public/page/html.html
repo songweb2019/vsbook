@@ -1,0 +1,510 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>html类型和属性</title>
+  <style>
+	  body,h1,h2,h3,h4,h5,h6,p,ol,ul,pre,div{margin:0;padding:0;}
+	  pre{font:16px "微软雅黑";}	
+	  div{background:#dbd8bd;}
+	  span,h3{color:#f00;}	
+/*    a:link{color:#ff4da6;}   未点击链接样式*/
+      a:visited{color:#000;}   /*点击前样式*/
+/*    a:active{color:#ff4da6;} 点击时样式*/
+      a:hover{color:#ff4da6;}
+      a{text-decoration:none;}
+/*	li{list-style:none;}	*/
+  </style>
+  <script type="text/javascript">
+  function show(){
+	 alert(2222222);
+  }
+</script>
+
+</head>
+<body>
+<!--返回底部 按钮  -->
+<div><center><button><a href="#db">返回底部</a></button></center></div>
+
+<h2><a>目录</a></h2><hr>
+<div>
+<ul type="none" start="">
+<br>
+  <li><a href="#h">&nbsp;&nbsp;&nbsp;&nbsp;标题元素 h1~h6</a></li>
+  <li><a href="#p">&nbsp;&nbsp;&nbsp;&nbsp;段落标记 p</a></li>
+  <li><a href="#br">&nbsp;&nbsp;&nbsp;&nbsp;换行标记 br</a></li>
+  <li><a href="#hr">&nbsp;&nbsp;&nbsp;&nbsp;水平分割线 hr</a></li>
+  <li><a href="#pre">&nbsp;&nbsp;&nbsp;&nbsp;预格式化标签 pre</a></li>
+  <li><a href="#ts">&nbsp;&nbsp;&nbsp;&nbsp;特殊字符(实体)&...</a></li>
+  <li><a href="#ys">&nbsp;&nbsp;&nbsp;&nbsp;文本样式标签i...</a></li>
+  <li><a href="#div">&nbsp;&nbsp;&nbsp;&nbsp;块分区div</a></li>
+  <li><a href="#span">&nbsp;&nbsp;&nbsp;&nbsp;行分区span</a></li>
+  <li><a href="#img">&nbsp;&nbsp;&nbsp;&nbsp;图像标签img</a></li>
+  <li><a href="#a">&nbsp;&nbsp;&nbsp;&nbsp;链接a</a></li>
+  <li><a href="#table">&nbsp;&nbsp;&nbsp;&nbsp;表格table</a></li>
+  <li><a href="#li">&nbsp;&nbsp;&nbsp;&nbsp;列表li...</a></li>
+  <li><a href="#jg">&nbsp;&nbsp;&nbsp;&nbsp;结构标记header...</a></li>
+  <li><a href="#iframe">&nbsp;&nbsp;&nbsp;&nbsp;浮动框架iframe</a></li>
+<br>
+</ul>
+</div>
+
+
+<hr>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h2><a>文本</a></h2>
+<hr>	
+<pre>
+<h3 id="h">标题元素:h1~h6</h3>
+<h1>一级标题</h1><h2 align="center">二级标题</h2><h3>三级标题</h3><h4 align="left">四级标题</h4><h5>五级标题</h5><h6 align="right">六级标题</h6>
+<div>
+ 标题元素：
+    &lt;h1&gt;&lt;/h1&gt;~~~&lt;h6&gt;&lt;/h6&gt;
+    在页面中以醒目的方式显示文本
+    特点：1.字体大小有变化 h1最大，h6最小
+              2.字体加粗
+              3.独占一行，上下有垂直间距
+       属性: align 设置标记内容水平对齐方式
+       取值：left/center/right
+
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br> 
+<h3 id="p">段落标记:&lt;p&gt;&lt;/p&gt;</h3>
+<p align="left">hello world</p><p align="right">hello world</p><p align="center">hello world</p>
+<div>
+  段落标记:
+    &lt;p&gt;&lt;/p&gt;
+    以突出的形式表现一段文字
+     特点：1.独占一行
+               2.文本上下有垂直间距
+       属性: align
+       取值：left/center/right
+
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br>
+<h3 id="br">换行:&lt;br&gt;或&lt;/br&gt;</h3>
+
+换<br><br/>行
+
+<div>
+  换行标记: 
+    &lt;br&gt;或&lt;/br&gt;
+	
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br>
+<h3 id="hr">水平分割线:hr</h3>
+<hr  size="5px" width="50%" align="center" color="#000"> 
+<div>
+   水平分割线：
+      &lt;hr&gt;或&lt;/hr&gt;
+   属性：
+      size="5px"      分割线粗细 以px为单位的数字
+      width="50%"     分割线宽度以px为单位的数字   %
+      align="left"    分割线水平对齐 left/center/right
+      color="orange"  分割线颜色 合法颜色值
+
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br>
+<h3 id="pre">预格式化标签:&lt;pre&gt;&lt;/pre&gt;</h3>
+<pre>
+  鲁迅----
+      我没这样说过！
+</pre><pre>
+好 好学 习
+天 天向 上
+</pre>
+<div> 
+  预格式化标签:&lt;pre&gt;&lt;/pre&gt;
+      保存了在编写代码时的回车和空格效果
+      在浏览器中解析显示
+     
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br>	
+<h3 id="ts">特殊字符(实体):</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 空格   
+&lt;      左尖括号        
+&gt;      右尖括号      	
+&copy;     圈C商标     
+&reg;     圈R商标    
+&times;     ×    
+&yen;     人民币    
+
+<div>
+特殊字符(实体):
+      html会出现空格折叠现象
+         把所有的空格都解析成一个空格
+         把所有的回车都解析成一个空格&lt;br&gt;
+    空格      & nbsp;
+    <          & lt;
+    >          & gt;
+    ©         & copy;
+    ®         & reg;
+    ×          & times;
+    人民币  & yen;
+
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br>
+
+<h3 id="ys">文本样式标签:</h3>
+<i>斜体</i>         <em>斜体</em>              
+<b>加粗</b>         <strong>加粗</strong> 
+<s>删除线</s>       <del>删除线</del>        
+<u>下划线</u>           
+<sup>上标</sup>      <sub>下标</sub> 
+
+<div>
+文本样式标签:
+    &lt;i&gt;&lt;/i&gt;      &lt;em&gt;&lt;/em&gt;              斜体
+    &lt;b&gt;&lt;/b&gt;   &lt;strong&gt;&lt;/strong&gt;   加粗
+    &lt;s&gt;&lt;/s&gt;    &lt;del&gt;&lt;/del&gt;              删除线  语义
+    &lt;u&gt;&lt;/u&gt;           下划线
+    &lt;sup&gt;&lt;/sup&gt;   上标
+    &lt;sub&gt;&lt;/sub&gt;   下标
+
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br>
+<h3 id="div">块分区:div</h3>
+  <div>div</div>
+<h3 id="span">行分区:span</h3>
+  <span>span</span>
+
+
+<div>
+ 1.分区元素,如果不写样式，页面中是看不到的
+
+     块分区 &lt;div&gt;&lt;/div&gt;
+        用于页面中的布局效果
+        特点，单独成行
+     行分区 &lt;span&gt;&lt;/span&gt;
+        一行文字如果有多种样式，使用span
+        特点，与其他span元素共用一行
+        span中不允许嵌套块级元素
+
+2.<span>块级元素和行内元素：</span>
+
+    块级元素
+        页面上，单独成行的元素，都是块级元素
+        ex:h1~h6,p,div
+        块级元素默认排列方式，由上到下排列
+    行内元素
+        页面上，多个元素共用一行
+        ex:span em i b strong sub sup u s del
+        行内元素默认排列方式，由左往右排列
+
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br>
+<h3 id="img">图像:img</h3>
+<p align="center"><img src="http://pic15.nipic.com/20110628/1369025_192645024000_2.jpg" width="300px" title="风景" ><img src="day02/ex/08.png" title="炮兵" height="200px"><img src="01.png" alt="图片不存在">
+ </p>
+<div>
+1.图像的使用：
+     &lt;img&gt;或&lt;/img&gt;       
+     属性 src="图片资源路径"
+     &lt;img src="图片资源路径"&gt;
+
+2.URL
+    Uniform Resource Locator 统一资源定位符，俗称路径
+3.url的表现形式
+    1.绝对路径---使用网络资源的时候使用
+      完整的路径：<span>通信协议+主机名称+文件目录结构+资源名称</span>
+          优点：不占用本地存储空间
+          缺点：不稳定
+      使用网络资源发展出来的行业---图床
+
+2.相对路径---使用本服务器资源的时候使用
+    1.同级目录  直接引用资源名称 src="06.png"
+    2.子级目录 先进入子级目录，再引用文件名称
+           src="image/07.png"
+    3.父级目录，先返回父级目录，再引用文件
+           src="../8.png"
+    4.综合应用
+           src="../../image/a/10.png"
+           返回上一级，再返回上一级,进入image文件夹，在进入a文件夹，找到10.png
+
+4.图片的属性
+     src 设置图片资源路径 source的缩写-数据源
+     title：鼠标悬停时，显示的文字
+     alt:图片加载错误时，显示的文字
+     width:设置图片的宽
+     height：设置图片的高
+     注意：如果设置的宽高比，与原始图片宽高比不一致，会出现图片的失真。
+     <span>解决图片的失真，宽高属性，只写一个，另外一个自适应</span>
+
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br>
+<h3 id="a">链接:a</h3>
+ <a href="http://www.codeboy.com" target="_blank">学子商城</a>    <a href="1.zip">下载</a>    <a href="mailto:225388732@qq.com">发送邮件</a>
+ <a href="javascript:alert(1111111)">js1</a>    <a href="javascript:show()">js2</a>    <a href="#">回到页面顶部</a>	
+
+<div>
+链接:
+   1.语法
+       <span> &lt;a href&gt;&lt/a&gt;</span>
+     属性  href 链接的路径
+           <span>target</span>打开页面的方式
+               取值：_self 默认值，在当前页面中打开新网页
+                         <span>_blank 在新页面打开网页</span>
+
+   2.a标签其它表现形式
+     1.下载资源
+        &lt;a href="1.zip"&gt;下载&lt;/a&gt;
+     2.打开电子邮件
+        &lt;a href="mailto:g-chengliang@tedu.cn"&gt;发送新邮件&lt;/a&gt;
+
+   <span>3.调用执行js代码</span>
+        &lt;a href="javascript:alert(1111111)"&gt;js1&lt;/a&gt;
+        &lt;script type="text/javascript"&gt;
+              function show(){
+	          alert(2222222);
+             }
+        &lt;/script&gt;
+        &lt;a href="javascript:show()"&gt;js2&lt;/a&gt;
+
+    4.回到页面顶部
+        &lt;a href="#"&gt;回到页面顶部&lt;/a&gt;
+        一般当你不知道a标签要跳转到哪里的时候，写#
+
+<span>a标签的锚点操作:</span>
+    1.什么是锚点
+        锚点，就是页面中的一个记号,可以通过超链接的方式链接到记号位置处
+    2.锚点的使用
+     1.定义锚点
+        1.1在锚点位置处添加空的a标签，使用name属性定义锚点
+            <span> &lt;a name="锚点名称"&gt;&lt;/a&gt;</span>
+        1.2直接使用锚点位置处元素的id当做锚点名称
+            <span> &lt;any id="锚点名称"&gt;</span>
+     2.链接到锚点
+             <span>&lt;a href="#锚点名称"&gt;。。。。&lt;/a&gt;</span>
+    3.锚点想要链接到其它页面的锚点
+            <span> &lt;a href="其它网页的url#锚点名称"&gt;....&lt;/a&gt;</span>
+
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br>
+<h3 id="table">表格:table</h3>
+<table border="1px" width="400px" height="300px" align="center" bgcolor="#a2acf4" bordercolor="#f7d0a2" cellpadding="10px" cellspacing="10px">
+<caption><h3>表格标题</h3></caption>
+<thead><tr align="center" valign="middle" bgcolor="#ff4da6"><th>表头</th><td colspan="3">th可以替换td，有加粗居中效果</td></tr></thead>
+<tbody><tr><th rowspan="2">表主体</th><td colspan="3">tbody是表主体</td></tr><tr><td width="70px" align="right">rowspan跨行</td><td height="70px" valign="top">colspan跨列</td><td bgcolor="#c9c9c9"></td></tr></tbody>
+<tfoot><tr><th>表脚</th><td colspan="3">tfoot是表脚</td></tr></tfoot>
+</table>
+
+<div>
+表格:
+表格语法:
+  表格 &lt;table&gt;&lt;/table&gt;
+    行  &lt;tr&gt;&lt;/tr&gt;    table row
+    列  &lt;td&gt;&lt;/td&gt;   table data
+        &lt;table&gt;
+           &lt;tr&gt;
+              &lt;td&gt;数据内容&lt;/td&gt;
+           &lt;/tr&gt;
+        &lt;/table&gt;
+
+属性:
+table标签的属性:
+      border                        设置表格的边框
+      width="200px"           设置表格宽
+      height="200px"         设置表格高
+      align="center"           设置表格水平对齐方式
+      bgcolor="pink"          设置表格背景颜色
+      bordercolor="red"     设置表格边框颜色
+      <span>cellpadding="10px"   设置表格内边距 边框到内容的距离(以左和上为准)</span>
+      <span>cellspacing="10px"    设置表格的外边距 边框到边框的距离</span>
+    
+tr的属性:
+      align    left/center/right           设置当前行内容的水平对齐方式
+      valign   top/middle/bottom    设置当前行内容垂直对齐方式
+      bgcolor="yellow"                    设置当前行的背景颜色
+  
+td的属性:
+      width="70px"         设置当前单元格宽度，宽度过大会影响当前列
+      height="70px"        设置当前单元格的高度，高度过大，会影响当前行
+      align="right"          设置当前单元格内容的水平对齐方式
+      valign="top"           设置当前单元格内容的垂直对齐方式
+      bgcolor="blue"      设置当前单元格的背景颜色
+      <span>colspan    跨列，列合并</span>
+      <span>rowspan   跨行，行合并</span>
+
+不规则的表格:
+    <span>跨列 colspan="n"</span>
+       第一步：从指定的单元格的位置处，横向向右合并N个单元格(n包括自己)
+       第二步：把被合并的单元格删除
+    <span>跨行 rowspan="n"</span>
+       第一步：从指定的单元格的位置处，纵向向下合并N个单元格(n包括自己)
+       第二步：把被合并的单元格删除
+
+表格可选标记:
+    表格的标题:
+        <span> &lt;caption&gt; &lt;/caption&gt;</span>
+         注意，如果设置表格标题，&lt;caption&gt;&lt;/caption&gt;必须紧跟  &lt;table&gt;
+    行/列的标题:
+        使用&lt;th&gt;&lt;/th&gt;替换&lt;td&gt;&lt;/td&gt;
+              <span>&lt;th&gt;&lt;/th&gt;：加粗，居中</span>
+
+复杂表格的应用:
+     行分组,默认不可见
+     可以将几个连续行，划分到一个组中，进行统一管理
+       <span>表头&lt;thead&gt;&lt;/thead&gt;</span>
+       <span>表主体&lt;tbody&gt;&lt;/tbody&gt;</span>
+       <span>表脚&lt;tfoot&gt;&lt;/tfoot&gt;</span>
+  表格嵌套:
+     <span>被嵌套的表格，只能放在td中</span>
+
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br>
+<h3 id="li">无序/有序列表:ul/ol</h3>
+<ol type="i" start=""> <li>ol有序列表</li><li>type=" " 标识项的类型  1/a/A/i/I</li><li>start=""  标识项的起始数字</li></ol><ul type="circle"><li>ul无序列表</li><li>type 指定标识类型
+       取值:
+       1.disc 默认值，实心圆
+       2.circle 空心圆
+       3.square 实心小方块
+       4.none 不显示标识</li><li>在li中嵌套其它列表:
+  列表的嵌套，必须放在li中，不是语法要求，是语义要求</li></ul><ul type=""><li><ul type="square"> <li><img src="day02/ex/image/06.png" width="50px"></li><li><img src="day02/ex/image/07.png" width="50px"></li><li><img src="day02/ex/image/08.png" width="50px"></li></ul></li><li><ol type="I"><li><a href="#">汤圆炒橘子</a></li><li><a href="#">西红柿炒月饼</a></li><li><a href="#">姜丝炒土豆丝</a></li></ol></li></ul>
+<h3>定义列表:dl</h3><dl><dt>要解释说明的名词:dt </dt><dd>要解释说明的内容:dd</dd></dl>
+<div>
+列表
+列表的作用:
+     最原始的作用，有条理的显示数据
+     列表是由列表类型和列表项组成
+
+1.有序列表:
+  项目中，有序列表就是显示数据，而且使用几率很小
+    &lt;ol&gt;  order list--ol  list item--li
+    &lt;li&gt;打开冰箱门&lt;/li&gt;  
+    &lt;li&gt;把大象放进冰箱&lt;/li&gt;
+    &lt;li&gt;关上冰箱门&lt;/li&gt;
+  &lt;/ol&gt;
+ <span>ol属性：
+      type=" " 标识项的类型  1/a/A/i/I
+      start=""  标识项的起始数字</span>
+
+2.无序列表:
+什么是无序列表:
+  有类似结构的列表项，但是没有顺序要求的内容一般使用无序列表
+  ul在项目中使用非常频繁，常用于对于一组相似的内容进行布局和排版
+    ul---unorder list     li---list item
+    &lt;ul&gt;
+       &lt;li&gt;&lt;/li&gt;
+       ...
+    &lt;/ul&gt;
+
+<span>ul的属性:
+    type 指定标识类型
+    取值   disc 默认值，实心圆
+             circle 空心圆
+             square 实心小方块
+             none 不显示标识</span>
+
+列表的嵌套:
+  在li中嵌套其它元素
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src="../image/06.png"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src="../image/07.png"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src="../image/08.png"&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href="#"&gt;汤圆炒橘子&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;西红柿炒月饼&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;姜丝炒土豆丝&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+
+在li中嵌套其它列表:
+  列表的嵌套，必须放在li中，不是语法要求，是语义要求
+
+定义列表(h5新标签):
+    对一个名词，进行解释说明的时候，使用定义列表
+    &lt;dl&gt; 定义列表
+      &lt;dt&gt; &lt;/dt&gt;      要解释说明的名词
+      &lt;dd&gt; &lt;/dd&gt;    要解释说明的内容
+    &lt;/dl&gt;
+
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br>
+<h3 id="jg">结构标记:header</h3>
+<header>header</header><footer>footer</footer><nav>nav</nav><section>section</section><aside>aside</aside><article>article</article>
+<div> 
+结构标记:
+   用于描述整个网页结构，取代div做布局的一套标记
+   为什么要使用结构标记，而不用div
+     结构标记的作用根div一模一样
+     结构标记是有语义，方便阅读
+   使用有语义的标签,可以让页面在搜索时更靠前
+
+常用的结构标记:
+    1.&lt;header&gt;&lt;/header&gt;    定义网页的头部，或者某个区域的顶部
+    2.&lt;footer&gt;&lt;/footer&gt;      定义网页的脚部，或者某个区域的底部
+    3.&lt;nav&gt;&lt;/nav&gt;              定义网页导航链接
+    4.&lt;section&gt;&lt;/section&gt;  定义网页主体内容
+    5.&lt;aside&gt;&lt;/aside&gt;        定义网页侧边栏
+    6.&lt;article&gt;&lt;/article&gt;     定义与文字相关的内容，比如，论坛，回帖，用户评论....
+
+</div>
+<br>
+<hr> <!-- 返回顶部 -->
+<center><button><a href="#">返回顶部</a></button></center>
+<br>
+<h3 id="iframe">浮动框架:iframe</h3>
+<iframe src="form表单类型和属性.html" frameborder="2" width="100%"></iframe>
+
+<div>
+  浮动框架：
+    在一个网页中，引入另一个网页，实现代码重用
+      &lt;iframe&gt;&lt;/iframe&gt;
+         src 要引入的网页路径
+         width 设置iframe的宽度
+         height设置iframe的高度   需要js和dom的支撑
+         frameborder 浮动框架的边框
+         scrolling 设置滚动条 yes no  auto
+
+</div>
+
+
+</pre>
+<hr>	
+<!-- 返回顶部 -->
+<div><center><button><a id="db" href="#">返回顶部</a></button></center></div>
+</body>
+</html>	

@@ -1,73 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Vsbook 2019/6/20 -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!--简体中文  -->
-  <!-- <meta http-equiv="content-type" content="text/html; charset=gb2312"> --> 
-  <!-- 繁体中文 / 英 语--->
-  <!-- <meta http-equiv="content-type" content="text/html; charset=utf-8"> -->
-  <!-- 自动跳转 -->
-  <!-- <meta http-equiv="Refresh" content="3;URL=http：//www.xxxx.com">  -->
-  <!-- 禁止浏览器从本地机的缓存中调阅页面内容。  -->
-  <!-- <meta http-equiv="Pragma" content="no-cache"> -->
-  <!-- 网页不会被缓存  -->
-  <!--
-    <meta http-equiv="pragma" content="no-cache"> 
-    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate"> 
-    <meta http-equiv="expires" content="0">  -->
-  <!-- 网页制作者信息 -->
-  <meta name="author" content="www.song_web@sina.com">  
-  <!-- 网站简介 -->
-  <meta name="description" content="小说网站，中文网站">
-  <!-- 搜索关键字 -->
-  <meta name="keywords" content="小说,,vsbook,哪个小说网站比较好,读书,学习">
-  <!--  防止别人在框架里调用页面 -->
-  <meta http-equiv="Window-target" content="_top">
-  <title>Vsbook</title>
-  <link rel="stylesheet" href="./css/common.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <title>song-个人网站</title>
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<div id="container">
 <!-- 头 -->
-<header id="header"></header>
-<!-- 内容 -->
-<div id="main">
+<header id="header">
+  <!-- 文字logo -->
+  <div class="logo">
+    <span class="fontbig">S</span>
+    <span class="fontsmall">o</span>
+    <span class="fontsmall">n</span>
+    <span class="fontbig">g</span>
+  </div>
+</header>
 
-  <!-- mainnav 主导航 -->
+<main id="main">
+   <!-- 导航标签 -->
+   <div id="tabs"> 
+     <ul id="tab">
+       <li>
+         <a href="/public/home.html" class="tabp pct1">首页</a>
+       </li>
+       <li class="active">
+         <p class="tabp pct2">笔记</p>
+       </li>
+       <li>
+         <p class="tabp pct3">游戏</p>
+       </li>
+       <li>
+         <p class="tabp pct4">小说</p>
+       </li>
+     </ul>
+   </div>
+   <!-- 内容 -->
+   <div id="content">
+    <div id="cont2">
+      <!-- 笔记列表 -->
+      <ul class="mynotes" type="1">
+        <li>
+          <a href="/public/page/wx.html">微信小程序</a>
+        </li>
+        <li>
+          <a href="/public/page/DOMjy.html">DOM简易操作</a>
+        </li>
+        <li>
+          <a href="/public/page/URL.html">URL讲解</a>
+        </li>
+        <li>
+          <a href="/public/page/form.html">表单</a>
+        </li>
+        <li>
+          <a href="/public/page/html.html">html标签详解</a>
+        </li>
+        <li>
+           <a href="/public/page/bootstrap/public/bootstrap.html">bootstrap详解</a>
+        </li>
+      </ul>
+    </div>
+    <div id="cont3">
+      <!-- 游戏 -->
+      <button class="c3-snake"> <a href="/public/snake.html">贪吃蛇</a> </button>
 
-  <!-- banner 760*100 750*120 728*90 585*140 468*95 468*60 360*300 120*120-->
-  
-</div>
-  <!-- 脚 -->
-  <footer id="footer"></footer>
-</div>
-<!-- sidebar 侧边栏 -->
-<div id="sidebar">
-    <div class="sidebarlogo sidebarcom">
-      <a href="index.html">
-        Vsbook
-      </a>
     </div>
-    <div class="sidebarfont sidebarcom">
-      <a href="javascript:;">
-        <p>繁</p>
-      </a>
+    <div id="cont4">
+      小说
     </div>
-    <div >
-    <div class="sidebartop sidebarcom">
-      <a href="#">
-       <p>返回顶部</p>
-      </a>
-    </div>
- </div> 
- 
-<!-- <script src="./js/jquery-1.11.3.js"></script> -->
-<script src="./js/jquery-3.2.1.js"></script>
-<script src="./js/header.js"></script>
-<script src="./js/footer.js"></script>
+   </div>
+</main>
+
+<!-- 脚 -->
+<footer id="footer">
+  <div class="copy">
+      版权所有 © song
+  </div>
+</footer>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

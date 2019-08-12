@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>徽章、巨幕、分页、面包屑导航、进度条</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+        .pagination>.page-item{
+            margin-left:5px;
+            margin-right:5px;
+        }
+        .breadcrumb-item + .breadcrumb-item::before{
+            content:">";
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+   <p></p>
+    <pre>
+      <h4>其他组件</h4>
+        <h5>1.徽章</h5>
+             基本类 badge
+             颜色 badge-danger/warning/success...
+             徽章的样式 badge-pill 胶囊
+            <img src="ht_img/3-11_01.png"/>
+     </pre>
+              <ul class="list-group">
+                  <li class="list-group-item">赞  <a href="#" class="badge badge-pill badge-danger">666</a></li>
+                  <li class="list-group-item">踩  <a href="#" class="badge badge-warning">555</a></li>
+                  <li class="list-group-item">关注  <a href="#" class="badge badge-info">222</a></li>
+              </ul>
+        <pre>
+        <h5>2.巨幕</h5>
+             巨大的内边距，有背景颜色，和圆角
+             class="jumbotron"
+             <img src="ht_img/3-11_02.png"/>
+        </pre>
+                  <div class="jumbotron">
+                      <h2>今天好热</h2>
+                      <p>凉水洗把脸</p>
+                      <p>坚持到下课</p>
+                      <p>下课还有晚自习</p>
+                      <p>到家还得敲代码</p>
+                  </div>
+        <pre>
+        <h5>3.分页</h5>
+             ul.pagination>li.page-item>a.page-link
+             li的修饰类  .active 激活
+             .disabled 禁用
+             <img src="ht_img/3-11_03.png"/>
+        </pre>
+          <ul class="pagination">
+              <li class="page-item disabled">
+                  <a class="page-link" href="#">上一页</a>
+              </li>
+              <li class="page-item  active">
+                  <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                  <a class="page-link " href="#">2</a>
+              </li>
+              <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                  <a class="page-link" href="#">下一页</a>
+              </li>
+          </ul>
+        <pre>
+        <h5>4.面包屑导航</h5>
+             ul.breadcrumb>li.breadcrumb-item
+             中间的连接符号需要自己重写样式
+             .breadcrumb-item + .breadcrumb-item::before{
+                   content:">";
+              }
+              <img src="ht_img/3-11_04.png"/>
+        </pre>
+           <ul class="breadcrumb">
+               <li class="breadcrumb-item">
+                   <a  href="#">首页</a>
+               </li>
+               <li class="breadcrumb-item">
+                   <a href="#">学习用品</a>
+               </li>
+               <li class="breadcrumb-item">
+                   <a href="#">笔记本电脑</a>
+               </li>
+               <li class="breadcrumb-item">
+                   <a href="#">Tinkpad430</a>
+               </li>
+           </ul>
+         <pre>
+        <h5>5.进度条</h5>
+          div.progress>div.progress-bar+w-50+bg-danger
+            子div设置w宽度，就是进度条进度
+            子div设置背景，就是进度的颜色
+            子div设置条纹 progress-bar-striped
+            子div设置动画 progress-bar-animated
+            可以在同一个div.progress中写多个div.progress-bar
+           <img src="ht_img/3-11_05.png"/>
+         </pre>
+    <h5>带动画的条纹进度条</h5>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped w-100 bg-danger progress-bar-animated"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped w-100 bg-warning progress-bar-animated"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped w-100 bg-dark progress-bar-animated"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped w-100 bg-secondary progress-bar-animated"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped w-100 bg-primary progress-bar-animated"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped w-100 bg-info progress-bar-animated"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped w-100 bg-success progress-bar-animated"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped w-100 bg-warning progress-bar-animated"></div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h5>分割进度条</h5>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated w-25 bg-danger"></div>
+        <div class="progress-bar progress-bar-striped progress-bar-animated w-75 bg-warning"></div>
+        <div class="progress-bar progress-bar-striped progress-bar-animated w-100 bg-success"></div>
+    </div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+</body>
+</html>	

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠&卡片</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+  <p></p>
+    <pre>
+      <h4>折叠效果</h4>
+        <span>&lt;button data-toggle="collapse" data-target="#demo"&gt;折叠&lt;/button&gt;
+        &lt;div class="collapse" id="demo"&gt;内容&lt;/div&gt;</span>
+       总结：a标签和button标签都可以绑定，指向元素
+             a使用的是href="#id"
+             button使用的是data-target="#id"
+        <button data-toggle="collapse" data-target="#demo">折叠</button>
+        <div class="collapse" id="demo">        Lorem ipsum dolor内容</div>
+       <h4>卡片</h4>
+        <img src="ht_img/3-6_01.png"/>
+       <h4>卡片+折叠：手风琴</h4>
+         <img src="ht_img/3-6_02.png"/>
+        注意事项：
+             1.collapse不能和.card-body在同一个标签上
+                不然会发生隐藏/显示的卡顿
+                解决方案  div.collapse>div.card-body
+             2.几个折叠部分，可以同时打开，而不能开启一个，其它的都关闭
+                解决方案，在最外层div上写id="parent"
+                在所有div.collapse中添加事件的绑定data-parent="#parent"
+                这样就可以保证在最外层div中，只有一个折叠区域可以打开了
+
+    </pre>
+
+    <h5>卡片</h5>
+    <div class="card">
+        <div class="card-header">
+            <h6>卡片标题</h6>
+            <a class="card-link" href="#">aaaaaaaaa</a>
+        </div>
+        <div class="card-body">
+            <p>Lorem内容</p>
+        </div>
+        <div class="card-footer">
+            <p>版权所有</p>
+        </div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h5>折叠</h5>
+    <button class="btn btn-danger" data-toggle="collapse" data-target="#demo2">折叠</button>
+    <div id="demo2" class="collapse">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate fugiat harum illo maiores omnis saepe sunt tempora tempore. A accusamus aperiam aspernatur excepturi harum, impedit iusto officiis porro unde veniam.</div>
+    <br/>
+    <hr/>
+    <h5>卡片+折叠：手风琴</h5>
+    <div id="parent">
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#one">卡片1</a>
+            </div>
+            <div data-parent="#parent" id="one" class=" collapse">
+                <div class="card-body">
+                    Lorem1
+                </div>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#two">卡片2</a>
+            </div>
+            <div data-parent="#parent" id="two" class=" collapse">
+                <div class="card-body">
+                    Lorem2
+                </div>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#three">卡片3</a>
+            </div>
+            <div data-parent="#parent" id="three" class=" collapse">
+                <div class="card-body">
+                    Lorem3
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>	

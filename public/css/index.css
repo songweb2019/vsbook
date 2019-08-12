@@ -1,57 +1,127 @@
-/* index.css */
-/* 侧边栏 */
-#sidebar{
-  width:60px;
-  height:200px;
-  position: fixed;
-  border-radius: 20px;
-  background: #fdf1bc;
-  opacity:1;
-  /* border: 1px solid black; */
-  top:200px;
-  right:40px;
-}
-#sidebar .sidebarcom{
-  margin:10px 0px; 
-  font-size: 16px;
-  text-align: center;
-}
-#sidebar .sidebarcom a p{
-  font-size: 16px;
-}
-.sidebarlogo{
-  width:60px;
-  height: 40px;
-  border: 1px solid black;
-}
-.sidebarlogo a{
+*{
+  margin: 0;
+  padding:0;
+  color:#fff;
+  background: #000;
   text-decoration: none;
-}
-.sidebarfont{
-  width:60px;
-  height: 40px;
-  line-height: 40px;
-  border: 1px solid black;
-}
-.sidebartop{
-  width:40px;
-  height:40px;
-  padding: 0px 10px;
-  line-height:20px;
-  border: 1px solid black;
-}
-/* 主要内容容器 */
-#container{
-  width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  border: 1px solid red;
-}
-/* 主体内容 */
-#main{
-  width: 1200px;
-  height: 2000px;
-  box-sizing: border-box;
-  border: 1px solid black;
+  list-style: none;
 }
 
+#header,#footer{
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0 auto;
+}
+#header{
+  height:300px;
+  border-bottom: 1px solid #fff;
+}
+#footer{
+  height:100px;
+  border-top: 1px solid #fff;
+}
+
+.logo{
+  width: 150px;
+  height: 150px;
+  border:2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.logo .fontbig{
+  font:45px Algerian;
+}
+.logo .fontsmall{
+  font:15px Algerian;
+}
+
+#main{
+  margin-top:20px;
+  width:100%;
+  min-height:800px;
+}
+
+#tabs{
+  width: 1200px;
+  height: 60px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#tab{
+  display:flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+#tab li{
+  width:150px;
+  height:60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin:0px 50px;
+}
+.active{
+  border-left: 1px solid #fff;
+  border-bottom:1px solid #fff;
+}
+#tab li:hover{
+  border-left: 1px solid #fff;
+  border-bottom:1px solid #fff;
+}
+#tab li p,#tab li a{
+  font:24px 华文行楷;
+  cursor: pointer;
+  padding:10px 30px;
+}
+
+#content{
+  width:1200px;
+  height:800px;
+  position: relative;
+  margin:20px auto;
+}
+#cont2,#cont3,#cont4{
+  width:1200px;
+  height:800px;
+  position: absolute;
+}
+#cont2{
+  display: block;
+}
+#cont3{
+  display: none;
+}
+#cont4{
+  display: none;
+}
+
+.mynotes{
+  width:1000px;
+  height:600px;
+  border:1px solid #fff;
+  border-radius: 5px;
+  padding:20px 50px;
+  margin:0 auto;
+  overflow: auto;
+}
+.mynotes li{
+  width: 100%;
+  height: 40px;
+  padding:5px 20px;
+  border-radius: 50px;
+}
+.mynotes li a{
+  font-size: 20px;
+}
+
+.c3-snake{
+  width:100px;
+  height: 20px;
+
+}

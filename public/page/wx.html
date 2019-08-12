@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>微信小程序</title>
+  <style>
+    div{border:2px solid #000;width:100%;}
+    a{color:#2c2c2c;font-size: 14px;text-decoration: none;}
+    h3{color:#000;}
+    h4{color:#999;}
+    p{font-size:14px;color: #15f;}
+    pre{font-size: 14px;color:#f33;}
+    ul li:hover{
+      list-style: none;
+      width: 100%;
+      background:#ccc;
+    }
+  </style>
+</head>
+<body>
+<h1>微信小程序</h1>
+<!-- 目录 -->
+<div>
+  <h2>目录</h2>
+  <ul type="1" class="catalog">
+    <li id="d8"><a href="#d1">请谈谈微信小程序主要目录和文件的作用？</a></li>
+    <li id="d8"><a href="#d2">简单描述下微信小程序的相关文件类型</a></li>
+    <li id="d8"><a href="#d3">请谈谈wxml与标准的html的异同？</a></li>
+    <li id="d8"><a href="#d4">简述微信小程序原理</a></li>
+    <li id="d8"><a href="#d5">小程序的双向绑定和vue哪里不一样</a></li>
+    <li id="d8"><a href="#d6">小程序的wxss和css有哪些不一样的地方</a></li>
+    <li id="d8"><a href="#d7">小程序页面间有哪些传递数据的方法</a></li>
+    <li id="d8"><a href="#d8">小程序的生命周期函数</a></li>
+    <li id="d8"><a href="#d9">怎么封装微信小程序的数据请求</a></li>
+    <li id="d8"><a href="#d10">哪些方法可以用来提高微信小程序的应用速度</a></li>
+    <li id="d8"><a href="#d11">微信小程序的优劣势</a></li>
+    <li id="d8"><a href="#d12">怎么解决小程序的异步请求问题</a></li>
+    <li id="d8"><a href="#d13">小程序关联微信公众号如何确定用户的唯一性</a></li>
+    <li id="d8"><a href="#d14">如何实现下拉刷新</a></li>
+    <li id="d8"><a href="#d15">bindtap和catchtap的区别是什么</a></li>
+    <li id="d8"><a href="#d16">简述下 `wx.navigateTo()`, `wx.redirectTo()`, `wx.switchTab()`, `wx.navigateBack()`, `wx.reLaunch()`的区别</a></li>
+    <li id="d8"><a href="#d17">微信小程序与H5的区别?</a></li>
+    <li id="d8"><a href="#d18">webview中的页面怎么跳回小程序中？</a></li>
+    <li id="d8"><a href="#d19">使用webview直接加载要注意哪些事项？</a></li>
+    <li id="d8"><a href="#d20">小程序调用后台接口遇到哪些问题？</a></li>
+    <li id="d8"><a href="#d21">为什么要对小程序进行组件模块化设计</a></li>
+    <li id="d8"><a href="#d22">如何进行组件化模块化设计</a></li>
+    <li id="d8"><a href="#d23">40013错误</a></li>
+    <li id="d8"><a href="#d24">-4058错误</a></li>
+    <li id="d8"><a href="#d25">Page注册错误</a></li>
+    <li id="d8"><a href="#d26">Page route错误</a></li>
+    <li id="d8"><a href="#d27">Do not have * handler in currentpage.</a></li>
+    <li id="d8"><a href="#d28">tabBar设置不显示</a></li>
+    <li id="d8"><a href="#d29">wx.navigateTo无法打开页面</a></li>
+    <li id="d8"><a href="#d30">本地资源无法通过 css 获取</a></li>
+    <li id="d8"><a href="#d31">页面间数据传递</a></li>
+
+  </ul>
+</div> 
+<!-- 内容 -->
+<div>
+<h2>内容</h2>
+<ol type="0">
+
+<li class="active">
+  <h3 id="d1">请谈谈微信小程序主要目录和文件的作用？</h3>
+  <p>project.config.json  项目配置文 用得最多的就是配置是否开启https校验</p>
+  <p>App.js  设置一些全局的基础数据等</p>
+  <p>App.json 底部tab, 标题栏和路由等设置</p>
+  <p>App.wxss 公共样式，引入iconfont等</p>
+  <p>pages 里面包含一个个具体的页面</p>
+  <p>pages 里面包含一个个具体的页面</p>
+  <p>index.wxml (页面结构)</p>
+  <p>index.wxss (页面样式表)</p>
+  <p>index.js (页面的逻辑，请求和数据处理等)</p>
+</li>
+
+<li id="d2">
+  <h3>简单描述下微信小程序的相关文件类型</h3>
+    <h4>微信小程序项目结构主要有四个文件类型</h4>
+      <p>WXML（WeiXin Markup Language）是框架设计的一套标签语言，结合基础组件、事件系统，可以构建出页面的结构。内部主要是微信自己定义的一套组件</p>
+      <p>WXSS (WeiXin Style Sheets)是一套样式语言，用于描述 WXML 的组件样式</p>
+      <p>js 逻辑处理，网络请求</p>
+      <p>json 小程序设置，如页面注册，页面标题及tabBar</p>
+    <h4>主要文件</h4>
+    <p>app.json 必须要有这个文件，如果没有这个文件，项目无法运行，因为微信框架把这个作为配置文件入口，整个小程序的全局配置。包括页面注册，网络设置，以及小程序的 window 背景色，配置导航条样式，配置默认标题</p>
+    <p>app.js 必须要有这个文件，没有也是会报错！但是这个文件创建一下就行 什么都不需要写以后我们可以在这个文件中监听并处理小程序的生命周期函数、声明全局变量</p>
+    <p>app.wxss 可选</p>
+</li>
+
+<li id="d3">
+ <h3>请谈谈wxml与标准的html的异同？</h3>
+   <p>都是用来描述页面的结构</p>
+   <p>都由标签、属性等构成</p>
+   <p>标签名字不一样，且小程序标签更少，单一标签更多</p>
+   <p>多了一些 wx:if 这样的属性以及 {{ }} 这样的表达式</p>
+   <p>WXML仅能在微信小程序开发者工具中预览，而HTML可以在浏览器内预览</p>
+   <p>组件封装不同， WXML对组件进行了重新封装</p>
+   <p>小程序运行在JS Core内，没有DOM树和window对象，小程序中无法使用window对象和document对象</p>  
+
+ <h3>请谈谈WXSS和CSS的异同?</h3>  
+   <p>都是用来描述页面的样子</p>
+   <p>WXSS 具有 CSS 大部分的特性，也做了一些扩充和修改</p>
+   <p>WXSS新增了尺寸单位，WXSS 在底层支持新的尺寸单位 rpx</p>
+   <p>尺寸单位 rpx： rpx 是响应式像素,可以根据屏幕宽度进行自适应。规定屏幕宽为 750rpx。</p>
+   <p>如在 iPhone6 上，屏幕宽度为 375px，共有 750 个物理像素，则 750rpx = 375px = 750 物理像素</p>
+   <p>使用 @import 标识符来导入外联样式。@import 后跟需要导入的外联样式表的相对路径，用;表示语句结束</p>
+   <pre>
+      /** index.wxss **/
+      @import './base.wxss';
+      
+      .container{
+      color: red;
+      }      
+   </pre>
+   <p>WXSS 仅支持部分 CSS 选择器</p>
+   <p>WXSS 提供全局样式与局部样式</p>
+</li>
+
+<li id="d4">
+  <h3>简述微信小程序原理</h3>
+  <p>微信小程序采用 JavaScript、WXML、WXSS 三种技术进行开发,本质就是一个单页面应用，所有的页面渲染和事件处理，都在一个页面内进行，但又可以通过微信客户端调用原生的各种接口</p>
+  <p>微信的架构，是数据驱动的架构模式，它的 UI 和数据是分离的，所有的页面更新，都需要通过对数据的更改来实现</p>
+  <p>它从技术讲和现有的前端开发差不多，采用JavaScript、WXML、WXSS三种技术进行开发</p>
+  <p>功能可分为webview和appService两个部分</p>
+  <p>webview用来展现UI，appService有来处理业务逻辑、数据及接口调用</p>
+  <p>两个部分在两个进程中运行，通过系统层JSBridge实现通信，实现UI的渲染、事件的处理等。</p>
+</li>
+
+<li id="d5">
+  <h3>小程序的双向绑定和vue哪里不一样</h3>
+  <p>小程序直接 this.data 的属性是不可以同步到视图的，必须必须手动添加oninput调用 this.setData({ noBind:true }) </p>
+  <p>循环遍历的时候：小程序是wx:for="list"，而Vue是v-for="info in lis</p>
+  <p>调用data模型的时候：小程序是this.data.uinfo，而Vue是this.uinfo；给模型赋值也不一样，小程序是this.setData({uinfo:1})，而Vue是直接this.uinfo=1</p>
+</li>
+
+<li id="d6">
+  <h3>小程序的wxss和css有哪些不一样的地方</h3>
+  <h4>WXSS 和 CSS 类似，不过在 CSS 的基础上做了一些补充和修改</h4>
+  <h5>尺寸单位 rpx</h5>
+  <p>微信小程序新定义了一个尺寸单位，可以适配不同分辨率的屏幕，它规定屏幕宽为750rpx，如在 iPhone6 上，屏幕宽度为375px，共有750个物理像素，则750rpx = 375px =750物理像素，1rpx = 0.5px = 1物理像素。</p>
+  <h5>使用 @import 标识符来导入外联样式。@import 后跟需要导入的外联样式表的相对路径，用;表示语句结束</h5>
+  <pre>
+      /** index.wxss **/
+      @import './base.wxss';
+      
+      .container{
+          color: red;
+      }
+  </pre>
+
+</li>
+  
+<li id="d7">
+  <h3>小程序页面间有哪些传递数据的方法</h3>
+  <h4>使用全局变量实现数据传递 在 app.js 文件中定义全局变量 globalData， 将需要存储的信息存放在里面</h4>
+  <pre>
+      // app.js
+      App({
+           // 全局变量
+        globalData: {
+          userInfo: null
+        }
+      })
+  </pre>
+  <p>使用的时候，直接使用 getApp() 拿到存储的信息</p>
+  <h4>使用 wx.navigateTo 与 wx.redirectTo 的时候，可以将部分数据放在 url 里面，并在新页面 onLoad 的时候初始化</h4>
+  <pre>
+      //pageA.js
+
+      // Navigate
+      wx.navigateTo({
+        url: '../pageD/pageD?name=raymond&gender=male',
+      })
+      
+      // Redirect
+      wx.redirectTo({
+        url: '../pageD/pageD?name=raymond&gender=male',
+      })
+      
+      
+      // pageB.js
+      ...
+      Page({
+        onLoad: function(option){
+          console.log(option.name + 'is' + option.gender)
+          this.setData({
+            option: option
+          })
+        }
+      })
+  </pre>
+  <p>需要注意的问题：</p>
+  <p>wx.navigateTo 和 wx.redirectTo 不允许跳转到 tab 所包含的页面</p>
+  <p>onLoad 只执行一次</p>
+  <p>使用本地缓存 Storage 相关</p>
+</li>
+
+<li id="d8">
+  <h3>小程序的生命周期函数</h3>
+  <p>onLoad 页面加载时触发。一个页面只会调用一次，可以在 onLoad 的参数中获取打开当前页面路径中的参数</p>
+  <p>onShow() 页面显示/切入前台时触发</p>
+  <p>onReady() 页面初次渲染完成时触发。一个页面只会调用一次，代表页面已经准备妥当，可以和视图层进行交互</p>
+  <p>onHide() 页面隐藏/切入后台时触发。 如 navigateTo 或底部 tab 切换到其他页面，小程序切入后台等</p>
+  <p>onUnload() 页面卸载时触发。如 redirectTo 或 navigateBack 到其他页面时</p>
+  <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0">详见这里</a>
+</li>
+
+<li id="d9">
+  <h3>怎么封装微信小程序的数据请求</h3>
+  <p>在根目录下创建utils目录及api.js文件和apiConfig.js文件</p>
+  <p>在apiConfig.js 封装基础的get, post 和 put， upload等请求方法，设置请求体，带上token和异常处理等</p>
+  <p>在api中引入apiConfig.js封装好的请求方法，根据页面数据请求的urls, 设置对应的方法并导出</p>
+  <p>在具体的页面中导入</p>
+  <a href="https://segmentfault.com/a/1190000014789969">详见这里</a>
+</li>
+
+<li id="d10">
+  <h3>哪些方法可以用来提高微信小程序的应用速度</h3>
+  <p>提高页面加载速度</p>
+  <p>用户行为预测</p>
+  <p>减少默认 data 的大小</p>
+  <p>组件化方案</p>
+</li>
+
+<li id="d11">
+  <h3>微信小程序的优劣势</h3>
+  <h4>优势</h4>
+  <p>即用即走，不用安装，省流量，省安装时间，不占用桌面</p>
+  <p>依托微信流量，天生推广传播优势</p>
+  <p>开发成本比 App 低</p>
+  <p>安卓上可以添加到桌面，与原生App差不多。</p>
+  <p>为用户提供良好的安全保障。小程序的发布，微信拥有一套严格的审查流程， 不能通过审查的小程序是无法发布到线上的。</p>
+  <h4>缺点</h4>
+  <p>限制较多,页面大小不能超过1M。不能打开超过5个层级的页面</p>
+  <p>样式单一。小程序的部分组件已经是成型的了，样式不可以修改。例如：幻灯片、导航。</p>
+  <p>推广面窄，不能分享朋友圈，只能通过分享给朋友，附近小程序推广。其中附近小程序也受到微信的限制。</p>
+  <p>依托于微信，无法开发后台管理功能。</p>
+  <p>用户留存，即用即走是优势，也存在一些问题</p>
+  <p>入口相对传统 App 要深很多</p>
+
+  <h4>小程序与原生App哪个好？</h4>
+  <p>小程序除了拥有公众号的低开发成本、低获客成本低以及无需下载等优势，在服务请求延时与用户使用体验是都得到了较大幅度  的提升，使得其能够承载跟复杂的服务功能以及使用户获得更好的用户体验。</p>
+</li>
+
+<li id="d12">
+  <h3>怎么解决小程序的异步请求问题</h3>
+  <h4>小程序支持 ES6 语法</h4>
+  <p>在返回成功的回调里面处理逻辑</p>
+  <p>Promise 异步</p>
+  <p>async/await</p>
+  <h4>回调函数方式：</h4>
+  <pre>
+      app.js
+      success: function (info) {     
+          that.apirtnCallback(info)
+      }
+      index.js
+      onLoad: function () {
+          app.apirtnCallback = res => {
+           console.log(res) 
+          }
+      ｝      
+  </pre>
+</li>
+
+<li id="d13">
+  <h3>小程序关联微信公众号如何确定用户的唯一性</h3>
+  <p>如果开发者拥有多个移动应用、网站应用、和公众帐号（包括小程序），可通过 unionid 来区分用户的唯一性，因为只要是同一个微信开放平台帐号下的移动应用、网站应用和公众帐号（包括小程序），用户的 unionid 是唯一的。换句话说，同一用户，对同一个微信开放平台下的不同应用，unionid 是相同的</p>
+</li>
+
+<li id="d14">
+  <h3>如何实现下拉刷新</h3>
+  <p>首先在全局 config 中的 window 配置 enablePullDownRefresh</p>
+  <p>在 Page 中定义 onPullDownRefresh 钩子函数,到达下拉刷新条件后，该钩子函数执行，发起请求方法</p>
+  <p>请求返回后，调用 wx.stopPullDownRefresh 停止下拉刷新</p>
+  <a href="https://juejin.im/post/5a781c756fb9a063606eb742">详见这里</a>
+</li>
+
+<li id="d15">
+  <h3> bindtap和catchtap的区别是什么</h3>
+  <p>相同点：首先他们都是作为点击事件函数，就是点击时触发。在这个作用上他们是一样的，可以不做区分</p>
+  <p>不同点：他们的不同点主要是bindtap是不会阻止冒泡事件的，catchtap是阻值冒泡的</p>
+</li>
+
+<li id="d16">
+  <h3>简述下 `wx.navigateTo()`, `wx.redirectTo()`, `wx.switchTab()`, `wx.navigateBack()`, `wx.reLaunch()`的区别</h3>
+  <p>wx.navigateTo()：保留当前页面，跳转到应用内的某个页面。但是不能跳到 tabbar 页面</p>
+  <p>wx.redirectTo()：关闭当前页面，跳转到应用内的某个页面。但是不允许跳转到 tabbar 页面</p>
+  <p>wx.switchTab()：跳转到 abBar 页面，并关闭其他所有非 tabBar 页面</p>
+  <p>wx.navigateBack()关闭当前页面，返回上一页面或多级页面。可通过 getCurrentPages() 获取当前的页面栈，决定需要返回几层</p>
+  <p>wx.reLaunch()：关闭所有页面，打开到应用内的某个页面</p>
+</li>
+
+<li id="d17">
+  <h3>微信小程序与H5的区别?</h3>
+  <h4>第一条是运行环境的不同</h4>
+  <p>传统的HTML5的运行环境是浏览器，包括webview，而微信小程序的运行环境并非完整的浏览器，是微信开发团队基于浏览器内核完全重构的一个内置解析器，针对小程序专门做了优化，配合自己定义的开发语言标准，提升了小程序的性能。</p>
+  <h4>第二条是开发成本的不同</h4>
+  <p>只在微信中运行，所以不用再去顾虑浏览器兼容性，不用担心生产环境中出现不可预料的奇妙BUG</p>
+  <h4>第三条是获取系统级权限的不同</h4>
+  <p>系统级权限都可以和微信小程序无缝衔接</p>
+  <h4>第四条便是应用在生产环境的运行流畅度</h4>
+  <p>长久以来，当HTML5应用面对复杂的业务逻辑或者丰富的页面交互时，它的体验总是不尽人意，需要不断的对项目优化来提升用户体验。但是由于微信小程序运行环境独立</p>
+</li>
+
+<li id="d18">
+  <h3>webview中的页面怎么跳回小程序中？</h3>
+  <p>首先在外部网页的HTML要引入最新版的jweixin-1.3.2.js：</p>
+  <p> &lt;script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"&gt;&lt;/script&gt;</p>
+  <p>然后</p>
+  <pre>
+      wx.miniProgram.navigateTo({ //如果跳转到tabBar中的页面，必须换成switchTo
+        url: '/pages/login/login'+'$params'
+     })    
+  </pre>
+
+  <p>小程序导航的页面可以通过switchTab，但默认情况是不会重新加载数据的。</p>
+  <p>若需加载新数据，则在success属性中加入以下代码即可：</p>
+  <pre>
+      success: function (e) {
+        var page = getCurrentPages().pop();
+        if (page == undefined || page == null) return;
+        page.onLoad();
+      }         
+  </pre>
+</li>
+
+<li id="d19">
+  <h3>使用webview直接加载要注意哪些事项？</h3>
+  <p>必须要在小程序后台使用管理员添加业务域名；</p>
+  <p>h5页面跳转至小程序的脚本必须是1.3.1以上；</p>
+  <p>微信分享只可以都是小程序的主名称了，如果要自定义分享的内容，需小程序版本在1.7.1以上；</p>
+  <p>h5的支付不可以是微信公众号的appid，必须是小程序的appid，而且用户的openid也必须是用户和小程序的。</p>
+</li>
+
+<li id="d20">
+  <h3>小程序调用后台接口遇到哪些问题？</h3>
+  <p>数据的大小有限制，超过范围会直接导致整个小程序崩溃，除非重启小程序；</p>
+  <p>小程序不可以直接渲染文章内容页这类型的html文本内容，若需显示要借住插件，但插件渲染会导致页面加载变慢，所以最好在后台对文章内容的html进行过滤，后台直接处理批量替换p标签div标签为view标签，然后其它的标签让插件来做，减轻前端的时间。</p>
+</li>
+
+<li id="d21">
+  <h3>为什么要对小程序进行组件模块化设计</h3>
+  <p>微信小程序有代码大小限制，通过测试最大为1M</p>
+  <p>提高代码的复用率</p>
+</li>
+
+<li id="d22">
+  <h3>. 如何进行组件化模块化设计</h3>
+  <pre>
+      Component({
+        options: {
+          multipleSlots: true // 在组件定义时的选项中启用多slot支持
+        },
+        /**
+         * 组件的属性列表
+         */
+        properties: {
+          title: {            // 属性名
+            type: String,     // 类型（必填），目前接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
+            value: '标题'     // 属性初始值（可选），如果未指定则会根据类型选择一个
+          },
+          // 弹窗内容
+          content: {
+            type: String,
+            value: '内容'
+          },
+          // 弹窗取消按钮文字
+          btn_no: {
+            type: String,
+            value: '取消'
+          },
+          // 弹窗确认按钮文字
+          btn_ok: {
+            type: String,
+            value: '确定'
+          } 
+        },
+      
+        /**
+         * 组件的初始数据
+         */
+        data: {
+          flag: true,
+        },
+      
+        /**
+         * 组件的方法列表
+         */
+        methods: {
+          //隐藏弹框
+          hidePopup: function () {
+            this.setData({
+              flag: !this.data.flag
+            })
+          },
+          //展示弹框
+          showPopup () {
+            this.setData({
+              flag: !this.data.flag
+            })
+          },
+          /*
+          * 内部私有方法建议以下划线开头
+          * triggerEvent 用于触发事件
+          */
+          _error () {
+            //触发取消回调
+            this.triggerEvent("error")
+          },
+          _success () {
+            //触发成功回调
+            this.triggerEvent("success");
+          }
+        }
+      })
+  </pre>
+  <p>Component 构造器构造的组件也可以作为页面使用。</p>
+  <p>使用 this.data 可以获取内部数据和属性值，但不要直接修改它们，应使用 setData 修改。</p>
+  <p>生命周期函数无法在组件方法中通过 this 访问到。</p>
+  <p>属性名应避免以 data 开头，即不要命名成 dataXyz 这样的形式，因为在 WXML 中， data-xyz="" 会被作为节点 dataset 来处理，而不是组件属性。</p>
+  <p>在一个组件的定义和使用时，组件的属性名和data字段相互间都不能冲突（尽管它们位于不同的定义段中）。</p>
+  <p>Tips:</p>
+  <p>通过WXML的import和include来使用文件模版</p>
+  <p>使用WXSS的@import引用WXSS文件</p>
+  <p>使用JS的require来引用JS文件</p>
+</li>
+
+<li id="d23">
+  <h3>40013错误</h3>
+    <p>在微信小程序刚出来的时候如果没输入AppID，提示这个信息就表示没有破解，但是现在官方软件更新可以选择无AppID开发，我们可以通过选择无AppID，即可解决此错误。建议安装官方开发工具。</p>
+</li>
+
+<li id="d24">
+  <h3>-4058错误</h3>
+  <p>微信小程序创建项目时选择无AppID，创建项目时会生成app.json，app.josn是程序启动最重要的文件，程序的页面注册，窗口设置，tab设置及网络请求时间设置都是在此文件下的。如果你创建的项目目录下没有app.json文件就会报下面的错误。</p>
+  <p>我们看到上面的错误信息中有个数字-4058，这应该是初入微信小程序遇到最多的错误了，这种一般都是文件缺失，后面有个path，可以对着该路径看看是否存在这个文件。造成这种错误的原因一般都是创建项目选择的目录不正确，或者在app.json注册了一个不存在的页面。</p>
+  <p>当然还有一种情况就是在app.json文件的pages注册的页面是没有创建的，或者你删除了某个页面，但是没有取消注册也会是-4058错误。</p>
+</li>
+
+<li id="d25">
+  <h3>Page注册错误</h3>
+  <p>这个错误可能很容易理解，页面注册错误。页面是通过Page对象来渲染的，每个页面对应的js文件必须要创建page，最简单的方式就是在js文件下写入Page({})，在page中有管理页面渲染的生命周期，以及数据处理，事件都在这完成。这个错误引起的原因一般都是刚创建页面，js文件还有有处理或者忘了处理。所以要养成创建页面的同时在js文件先创建Page的习惯.</p>
+</li>
+
+<li id="d26">
+  <h3>Page route错误</h3>
+  <p>面意思就是页面路由错误，在微信中有两种路由方式一种是在wxml文件使用</p>
+  <p>如下代码：</p>
+  <h4>wxml文件：</h4>
+  <pre>
+      &lt;navigatorurl="search/search"&gt;
+      &lt;viewclass="serach_view_show" bindtap="bindtap"&gt; 搜索&lt;/view&gt;
+      &lt;/navigator&gt;     
+  </pre>
+  <h4>js文件事件处理函数：</h4>
+  <pre>
+      bindtap:function(event){
+        wx.navigateTo({
+        url: "search/search"
+        })
+      }         
+  </pre>
+  <p>如果你这样写的话，恭喜你，你就会看到上面提示的错误，这是因为重复调用路由引起的，处理方法就是删除一个路由，删除 &lt;navigator /&gt; 组件或者删除wx.navigateTo。除了上面说的可能导致路由错误外，还有一种情况，类似于下面的代码</p>
+  <pre>
+    &lt;navigatorurl="search/search" /&gt;
+      &lt;navigatorurl="search/search" /&gt;
+         &lt;viewclass="serach_view_show" bindtap="bindtap" /&gt; 搜索&lt;/view /&gt;
+      &lt;/navigator /&gt;
+    &lt;/navigator /&gt;     
+  </pre>
+  <p>这种也是不允许的，也就是说 &lt;navigator/&gt; 组件内部不能再嵌套 &lt;navigator/&gt; 组件。它只能是单层存在的。</p>
+</li>
+
+<li id="d27">
+  <h3>Do not have * handler in currentpage.</h3>
+  <p>大概意思就是当前页面没有此处理，让确定是否已经定义，还指出了错误出现的可能位置pages/message/message,其实这种问题出现一般就是我们在wxml定义了一些处理事件，但是在js文件中没有实现这个时事件的处理方法，就会出现这个错误。那么我们按提示在js文件加上事件处理，如下代码，加上后就不会再有此错误提示。</p>
+  <pre>
+      bindtap:function(event){
+        wx.navigateTo({
+          url:"search/search"
+        })
+      }     
+  </pre>
+</li>
+
+<li id="d28">
+  <h3>tabBar设置不显示</h3>
+  <p>对于tabBar不显示，原因有很多，查找这个错误直接去app.json这个文件，最常见的也是刚学习微信小程序最容易犯的错误无外乎下面几种</p>
+  <p>注册页面即将页面写到app.json的pages字段中，如</p>
+  <pre>
+    "pages":[
+      "pages/message/message",
+      "pages/contact/contact",
+      "pages/dynamic/dynamic",
+      "pages/dynamic/music/music",
+      "pages/index/index",
+      "pages/logs/logs"
+    ]  
+  </pre>
+  <p>tabBar写法错误导致的不显示，将其中的大写字母B写成小写，导致tabBar不显示。</p>
+  <p>tabBar的list中没有写pagePath字段，或者pagePath中的页面没有注册</p>
+  <p>tabBar的list的pagePath指定的页面没有写在注册页面第一个。微信小程序的逻辑是"pages"中的第一个页面是首页，也就是程序启动后第一个显示的页面，如果tabBar的list的pagePath指定的页面都不是pages的第一个，当然也就不会显示tabBar了。</p>
+  <p>tabBar的数量低于两项或者高于五项，微信官方中明确规定tabBar的至少两项最多五项。超过或者少于都不会显示tabBar。</p>
+</li>
+
+<li id="d29">
+  <h3>wx.navigateTo无法打开页面</h3>
+  <p>一个应用同时只能打开5个页面，当已经打开了5个页面之后，wx.navigateTo不能正常打开新页面。请避免多层级的交互方式，或者使用wx.redirectTo</p>
+</li>
+
+<li id="d30">
+  <h3>本地资源无法通过 css 获取</h3>
+  <p>background-image：可以使用网络图片，或者 base64，或者使用<image/>标签</p>
+</li>
+
+<li id="d31">
+  <h3>页面间数据传递</h3>
+  <p>微信小程序路由（页面跳转）是通过API wx.navigateTo或者wxml中<navigator/>组件实现的，不管哪种实现都会有一个重要的参数就是url，它指定了要跳转的页面，并且页面之间数据传递也是通过url来实现的，这个数据传递有点类似于我们使用的get网络请求，把参数都拼接在要跳转界面地址的后面并以“？”连接。然后将要传入的数据以键和值的形式追加在"?"后面，多个参数直接用"&"符合。如我们点击消息聊天记录，将列表上的数据传到下一个页面，可以这样写。</p>
+  <pre>
+  &lt;navigatorurl="/pages/dynamic/dynamic?title={{item.title}}&message={{item.message}}"&gt;
+      &lt;viewclass="item" &gt;
+      &lt;viewclass="item-left"&gt;
+        &lt;imagesrc="{{item.url}}" class="image"/&gt;
+      &lt;/view&gt;
+      &lt;viewclass="item-middle"&gt;
+        &lt;view&gt;
+          &lt;textclass="title"&gt;{{item.title}}&lt;/text&gt;
+        &lt;/view&gt;
+        &lt;view&gt;
+          &lt;textclass="message"&gt;{{item.message}}&lt;/text&gt;
+        &lt;/view&gt;
+      &lt;/view&gt;
+      &lt;viewclass="item_right"&gt;
+      &lt;view&gt;&lt;text class="time"&gt;{{item.time}}&lt;/text&gt;&lt;/view&gt;
+        &lt;viewclass="mark" wx:if="{{item.count&gt;0}}"&gt;&lt;textclass="text"&gt;{{item.count}}&lt;/text&gt;&lt;/view&gt;
+        &lt;/view&gt;
+      &lt;/view&gt;
+      &lt;view  class="line"&gt;&lt;/view&gt;
+  &lt;/navigator&gt;
+  </pre>
+  <p>而数据接收是在js文件的page里接收的，page生命周期有一个onLoad函数，它就是做一些初始化数据的工作，onLoad函数有一个参数options，我们就可以通过key将数据获取，如下P：</p>
+  <pre>
+      Page({
+        data:{
+        // text:"这是一个页面"
+        isHiddenToast:true
+        }
+        onLoad:function(options){
+        // 页面初始化 options为页面跳转所带来的参数
+        console.log(options.title)
+        console.log(options.message)
+        },
+        onReady:function(){
+        // 页面渲染完成
+        },
+        onShow:function(){
+        // 页面显示
+        },
+        onHide:function(){
+        // 页面隐藏
+        },
+        onUnload:function(){
+        // 页面关闭
+        },
+        bindtap:function(event){
+        wx.navigateTo({
+        url: "/pages/message/search/search"
+        })
+        },
+        })
+        
+  </pre>
+</li>
+
+</ol>
+</div>
+</body>
+</html>

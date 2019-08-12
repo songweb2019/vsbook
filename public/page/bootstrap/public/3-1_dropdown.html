@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件-下拉菜单</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p></p>
+    <pre>
+        <h4>下拉菜单</h4>
+        基本结构
+        <img src="ht_img/3-1_01.png"/>
+        <div class="dropdown">
+            <button class="dropdown-toggle"
+                    data-toggle="dropdown">下拉菜单</button>
+            <ul class="dropdown-menu">  拉出来了</ul>
+        </div>
+        <span>.dropdown-toggle   画三角
+        .dropdown-menu     隐藏
+        data-toggle="dropdown"  自定义属性两个作用
+             1.当button被点击时，激活事件
+             2.激活的事件，是以dropdown的方式运行</span>
+    </pre>
+    <h5>下拉菜单</h5>
+    <div class="dropdown">
+        <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+        <ul class="dropdown-menu">
+            <li><a href="#">菜单1</a></li>
+            <li><a href="#">菜单1</a></li>
+            <li><a href="#">菜单1</a></li>
+            <li><a href="#">菜单1</a></li>
+        </ul>
+    </div>
+    <br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/>
+
+</div>
+</body>
+</html>	

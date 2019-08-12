@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        pre{
+            font:16px;
+            background:#f7d0a2;
+        }
+        span{
+            color:#ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+     <p></p>
+    <pre>
+    <h4> 表单</h4>
+         1.表单元素的排列方向
+             form-group   堆叠表单，垂直方向
+             form-inline  内联表单，水平方向(弹性布局)
+         2.表单元素的样式class
+             form-control     是input元素的基本类
+                              块级，w100,字体，背景，边框，过渡
+             col-form-label   设置输入文本与边框的距离
+             col-form-label-sm   距离较小
+             col-form-label-lg   距离较大
+         3.对于checkbox的样式
+              父级.form-check   相对定位，让子元素以父级定位
+              &lt;input checkbox&gt;的class form-check-input
+                                     绝对定位，要和. form-check配合使用
+             .form-text   块级，有上外边距
+    </pre>
+    <h5>表单</h5>
+    <form action="" class="form-group">
+        <div>
+            用户名称：
+            <input type="text" class="form-control col-form-label"/>
+        </div>
+        <div>
+            用户密码：
+            <input type="password" class="form-control"/>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input"/>
+            自动登录
+        </div>
+        <button class="btn btn-primary">登录</button>
+    </form>
+    <br/>
+    <hr/>
+    <br/>
+    <!-- form-inline和row可以替换着使用 -->
+    <!--row有左右内边距，form-inline没有-->
+    <div class="form-inline form-text">
+        <div class="col-2">用户名</div>
+        <div class="col-6"><input type="text" class="w-100 form-control"/></div>
+        <div class="col-4">用户名包含字母数字6~12位</div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mt-3">
+            <input class="btn btn-success" type="submit" value="注册"/>
+            <input class="btn btn-danger" type="submit" value="取消"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>	

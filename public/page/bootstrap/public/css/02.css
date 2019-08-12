@@ -1,0 +1,78 @@
+div {
+  width: 0; }
+
+h2 {
+  color: #ff0; }
+
+div {
+  width: 140px; }
+
+div {
+  width: 30px; }
+
+div:before {
+  content: "ABC"; }
+
+div {
+  width: 5px;
+  background: #4040bf;
+  color: rgba(44, 66, 88, 0.6); }
+
+p:after {
+  content: "liangliang ate 80 baozis"; }
+
+p {
+  width: 500px;
+  height: 250px;
+  margin-left: 9px; }
+
+.div {
+  width: 0px; }
+
+p:before {
+  content: "aaabbb";
+  font-family: arial; }
+
+#d1 {
+  width: 15%;
+  height: 1.11111in; }
+
+.my-border, .my-bottom-border {
+  border: 1px solid transparent;
+  width: 400px;
+  margin-left: 20px; }
+
+.my-bottom-border {
+  border-bottom-color: #f00; }
+  .my-bottom-border:hover {
+    border-bottom-color: #00f; }
+
+.my-rounded, .rounded-shadow {
+  border: 1px solid #f00;
+  border-radius: 5px; }
+
+.rounded-shadow {
+  box-shadow: 0 0 10px; }
+
+div {
+  border: 5px solid #f00;
+  border-radius: 5%;
+  outline: 0; }
+
+p {
+  border: 1px solid #f00;
+  border-radius: 1%;
+  outline: 0; }
+
+h6 {
+  border: 2px solid #f00;
+  border-radius: 2%;
+  outline: 0; }
+
+h6 {
+  color: #00f;
+  width: 100px; }
+
+p {
+  color: #00f;
+  width: 100px; }
